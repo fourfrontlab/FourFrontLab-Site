@@ -1,4 +1,4 @@
-import { Github, Linkedin } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
 export default function Founders() {
   return (
@@ -24,10 +24,10 @@ export default function Founders() {
           <span className="font-mono text-[#CCFF00] text-xs uppercase block mb-4">Frontend / Engineering</span>
           <div className="flex gap-4">
             <a href="https://github.com/MTahaNadeem" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors">
-              <Github className="w-5 h-5" />
+              <FaGithub className="w-5 h-5" />
             </a>
             <a href="https://www.linkedin.com/in/mtahanadeem/" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors">
-              <Linkedin className="w-5 h-5" />
+              <FaLinkedin className="w-5 h-5" />
             </a>
           </div>
         </div>
@@ -41,10 +41,10 @@ export default function Founders() {
           <span className="font-mono text-[#CCFF00] text-xs uppercase block mb-4">Backend / Architecture</span>
           <div className="flex gap-4">
             <a href="https://github.com/haseeb786-code" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors">
-              <Github className="w-5 h-5" />
+              <FaGithub className="w-5 h-5" />
             </a>
             <a href="https://www.linkedin.com/in/abdul-haseeb-4a2925340/" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors">
-              <Linkedin className="w-5 h-5" />
+              <FaLinkedin className="w-5 h-5" />
             </a>
           </div>
         </div>
@@ -58,10 +58,10 @@ export default function Founders() {
           <span className="font-mono text-[#CCFF00] text-xs uppercase block mb-4">UX/UI / Design System</span>
           <div className="flex gap-4">
             <a href="https://github.com/syed-haseeb-badshah" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors">
-              <Github className="w-5 h-5" />
+              <FaGithub className="w-5 h-5" />
             </a>
             <a href="https://www.linkedin.com/in/syed-haseeb-badshah/" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors">
-              <Linkedin className="w-5 h-5" />
+              <FaLinkedin className="w-5 h-5" />
             </a>
           </div>
         </div>
@@ -75,10 +75,10 @@ export default function Founders() {
           <span className="font-mono text-[#CCFF00] text-xs uppercase block mb-4">Strategy / Growth</span>
           <div className="flex gap-4">
             <a href="https://github.com/cust40078-sudo" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors">
-              <Github className="w-5 h-5" />
+              <FaGithub className="w-5 h-5" />
             </a>
             <a href="https://www.linkedin.com/in/raja-mustafa-030749422/" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors">
-              <Linkedin className="w-5 h-5" />
+              <FaLinkedin className="w-5 h-5" />
             </a>
           </div>
         </div>

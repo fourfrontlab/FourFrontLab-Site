@@ -1,5 +1,6 @@
 'use client';
-import { ArrowRight, Github, Linkedin, Twitter } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 
 export default function Contact() {
   return (
@@ -24,13 +25,13 @@ export default function Contact() {
         <span className="font-mono text-zinc-500 text-xs uppercase">© {new Date().getFullYear()} FourFrontLab.</span>
         <div className="flex gap-6">
           <a href="https://x.com/FourFrontLab" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors cursor-pointer">
-             <Twitter className="w-5 h-5" />
+             <FaXTwitter className="w-5 h-5" />
           </a>
           <a href="https://github.com/fourfrontlab" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors cursor-pointer">
-             <Github className="w-5 h-5" />
+             <FaGithub className="w-5 h-5" />
           </a>
           <a href="https://www.linkedin.com/company/fourfrontlab/" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors cursor-pointer">
-             <Linkedin className="w-5 h-5" />
+             <FaLinkedin className="w-5 h-5" />
           </a>
         </div>
       </div>
