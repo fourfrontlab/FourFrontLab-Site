@@ -1,3 +1,5 @@
+import { Github, Linkedin } from 'lucide-react';
+
 export default function Founders() {
   return (
     <section className="py-32 px-6 lg:px-12 max-w-[1400px] mx-auto border-b border-zinc-900">
@@ -21,8 +23,12 @@ export default function Founders() {
           <h3 className="text-2xl font-medium text-white mb-2">Muhammad Taha Nadeem</h3>
           <span className="font-mono text-[#CCFF00] text-xs uppercase block mb-4">Frontend / Engineering</span>
           <div className="flex gap-4">
-            <a href="#" className="font-mono text-zinc-500 hover:text-white transition-colors text-sm uppercase">Github</a>
-            <a href="#" className="font-mono text-zinc-500 hover:text-white transition-colors text-sm uppercase">LinkedIn</a>
+            <a href="https://github.com/MTahaNadeem" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors">
+              <Github className="w-5 h-5" />
+            </a>
+            <a href="https://www.linkedin.com/in/mtahanadeem/" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors">
+              <Linkedin className="w-5 h-5" />
+            </a>
           </div>
         </div>
         
@@ -34,8 +40,12 @@ export default function Founders() {
           <h3 className="text-2xl font-medium text-white mb-2">Abdul Haseeb</h3>
           <span className="font-mono text-[#CCFF00] text-xs uppercase block mb-4">Backend / Architecture</span>
           <div className="flex gap-4">
-            <a href="#" className="font-mono text-zinc-500 hover:text-white transition-colors text-sm uppercase">Github</a>
-            <a href="#" className="font-mono text-zinc-500 hover:text-white transition-colors text-sm uppercase">LinkedIn</a>
+            <a href="https://github.com/haseeb786-code" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors">
+              <Github className="w-5 h-5" />
+            </a>
+            <a href="https://www.linkedin.com/in/abdul-haseeb-4a2925340/" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors">
+              <Linkedin className="w-5 h-5" />
+            </a>
           </div>
         </div>
 
@@ -47,8 +57,12 @@ export default function Founders() {
           <h3 className="text-2xl font-medium text-white mb-2">Syed Haseeb Badshah</h3>
           <span className="font-mono text-[#CCFF00] text-xs uppercase block mb-4">UX/UI / Design System</span>
           <div className="flex gap-4">
-            <a href="#" className="font-mono text-zinc-500 hover:text-white transition-colors text-sm uppercase">Dribbble</a>
-            <a href="#" className="font-mono text-zinc-500 hover:text-white transition-colors text-sm uppercase">LinkedIn</a>
+            <a href="https://github.com/syed-haseeb-badshah" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors">
+              <Github className="w-5 h-5" />
+            </a>
+            <a href="https://www.linkedin.com/in/syed-haseeb-badshah/" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors">
+              <Linkedin className="w-5 h-5" />
+            </a>
           </div>
         </div>
 
@@ -60,8 +74,12 @@ export default function Founders() {
           <h3 className="text-2xl font-medium text-white mb-2">Mustafa Arfat</h3>
           <span className="font-mono text-[#CCFF00] text-xs uppercase block mb-4">Strategy / Growth</span>
           <div className="flex gap-4">
-            <a href="#" className="font-mono text-zinc-500 hover:text-white transition-colors text-sm uppercase">Twitter</a>
-            <a href="#" className="font-mono text-zinc-500 hover:text-white transition-colors text-sm uppercase">LinkedIn</a>
+            <a href="https://github.com/cust40078-sudo" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors">
+              <Github className="w-5 h-5" />
+            </a>
+            <a href="https://www.linkedin.com/in/raja-mustafa-030749422/" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors">
+              <Linkedin className="w-5 h-5" />
+            </a>
           </div>
         </div>
 
