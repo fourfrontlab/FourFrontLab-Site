@@ -13,10 +13,9 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="mb-20 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white neon-text-purple">Core Offerings</h2>
-          <p className="text-slate-400 text-lg">Architecting robust solutions across the entire stack.</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-zinc-900 neon-text-purple">Core Offerings</h2>
+          <p className="text-slate-600 text-lg">Architecting robust solutions across the entire stack.</p>
         </motion.div>
 
         {/* Asymmetric Bento Box Grid */}
@@ -28,10 +27,10 @@ export default function Services() {
             className="glass-card p-10 md:col-span-2 flex flex-col justify-between min-h-[320px] group relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <Code2 className="w-12 h-12 text-blue-400 mb-6 relative z-10" />
+            <Code2 className="w-12 h-12 text-blue-500 mb-6 relative z-10" />
             <div className="relative z-10">
-              <h3 className="text-3xl font-bold text-white mb-3">Custom Web Development</h3>
-              <p className="text-slate-400 text-lg leading-relaxed">Next-generation frontend experiences built with React and modern frameworks, optimized for extreme performance and seamless user interaction.</p>
+              <h3 className="text-3xl font-bold text-zinc-900 mb-3">Custom Web Development</h3>
+              <p className="text-slate-600 text-lg leading-relaxed">Next-generation frontend experiences built with React and modern frameworks, optimized for extreme performance and seamless user interaction.</p>
             </div>
           </motion.div>
 
@@ -42,10 +41,10 @@ export default function Services() {
             className="glass-card p-10 md:col-span-1 flex flex-col justify-between min-h-[320px] group relative overflow-hidden"
           >
              <div className="absolute inset-0 bg-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <Server className="w-12 h-12 text-purple-400 mb-6 relative z-10" />
+            <Server className="w-12 h-12 text-purple-500 mb-6 relative z-10" />
             <div className="relative z-10">
-              <h3 className="text-3xl font-bold text-white mb-3">Scalable Backends</h3>
-              <p className="text-slate-400 text-lg leading-relaxed">High-throughput microservices and robust database architectures engineered for infinite scale.</p>
+              <h3 className="text-3xl font-bold text-zinc-900 mb-3">Scalable Backends</h3>
+              <p className="text-slate-600 text-lg leading-relaxed">High-throughput microservices and robust database architectures engineered for infinite scale.</p>
             </div>
           </motion.div>
 
@@ -56,17 +55,17 @@ export default function Services() {
             className="glass-card p-10 md:col-span-3 flex flex-col items-center text-center min-h-[280px] justify-center relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 opacity-50" />
-            <Layout className="w-12 h-12 text-blue-300 mb-4 relative z-10" />
-            <h3 className="text-3xl font-bold text-white mb-4 relative z-10">UI/UX Prototyping</h3>
-            <p className="text-slate-300 max-w-3xl text-lg relative z-10">From wireframes to highly interactive prototypes that simulate the final product feel, ensuring logical flow and flawless user journeys.</p>
+            <Layout className="w-12 h-12 text-blue-400 mb-4 relative z-10" />
+            <h3 className="text-3xl font-bold text-zinc-900 mb-4 relative z-10">UI/UX Prototyping</h3>
+            <p className="text-slate-600 max-w-3xl text-lg relative z-10">From wireframes to highly interactive prototypes that simulate the final product feel, ensuring logical flow and flawless user journeys.</p>
           </motion.div>
         </div>
       </div>
 
       {/* Infinite Horizontal Marquee */}
-      <div className="overflow-hidden whitespace-nowrap relative w-full flex items-center py-12 glass border-x-0 border-y-white/10 shadow-[0_0_30px_rgba(96,165,250,0.1)]">
-        <div className="absolute left-0 w-40 h-full bg-gradient-to-r from-[#030308] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 w-40 h-full bg-gradient-to-l from-[#030308] to-transparent z-10 pointer-events-none" />
+      <div className="overflow-hidden whitespace-nowrap relative w-full flex items-center py-12 glass border-x-0 border-y-zinc-200 shadow-sm">
+        <div className="absolute left-0 w-40 h-full bg-gradient-to-r from-[#FAFAF9] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 w-40 h-full bg-gradient-to-l from-[#FAFAF9] to-transparent z-10 pointer-events-none" />
         
         <motion.div 
           animate={{ x: ["0%", "-50%"] }}
