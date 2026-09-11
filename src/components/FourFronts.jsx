@@ -22,7 +22,7 @@ export default function FourFronts() {
           pin: true,
           scrub: 1,
           snap: 1 / (panels.length - 1),
-          end: () => "+=" + scrollContainerRef.current.offsetWidth
+          end: () => "+=" + (window.innerWidth * (panels.length - 1))
         }
       });
     }, sectionRef);
