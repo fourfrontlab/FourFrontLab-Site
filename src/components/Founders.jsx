@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
 export default function Founders() {
   return (
-    <section className="py-32 px-6 lg:px-12 max-w-[1400px] mx-auto border-b border-zinc-900">
+    <section className="py-32 px-6 lg:px-12 max-w-[1400px] mx-auto border-b border-zinc-900" id="team">
       <div className="mb-24 max-w-3xl">
         <h2 className="text-4xl lg:text-5xl font-medium tracking-tight mb-8">The Four Fronts.</h2>
         <p className="text-zinc-400 text-lg lg:text-xl leading-relaxed mb-6">

@@ -31,7 +31,7 @@ export default function Services() {
             <Code2 className="w-12 h-12 text-blue-400 mb-6 relative z-10" />
             <div className="relative z-10">
               <h3 className="text-3xl font-bold text-white mb-3">Custom Web Development</h3>
-              <p className="text-slate-400 text-lg leading-relaxed">Next-generation frontend experiences built with React and Framer Motion, optimized for extreme performance and deep-space aesthetics.</p>
+              <p className="text-slate-400 text-lg leading-relaxed">Next-generation frontend experiences built with React and modern frameworks, optimized for extreme performance and seamless user interaction.</p>
             </div>
           </motion.div>
 
@@ -45,7 +45,7 @@ export default function Services() {
             <Server className="w-12 h-12 text-purple-400 mb-6 relative z-10" />
             <div className="relative z-10">
               <h3 className="text-3xl font-bold text-white mb-3">Scalable Backends</h3>
-              <p className="text-slate-400 text-lg leading-relaxed">High-throughput microservices engineered for infinite global scale.</p>
+              <p className="text-slate-400 text-lg leading-relaxed">High-throughput microservices and robust database architectures engineered for infinite scale.</p>
             </div>
           </motion.div>
 
@@ -58,7 +58,7 @@ export default function Services() {
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 opacity-50" />
             <Layout className="w-12 h-12 text-blue-300 mb-4 relative z-10" />
             <h3 className="text-3xl font-bold text-white mb-4 relative z-10">UI/UX Prototyping</h3>
-            <p className="text-slate-300 max-w-3xl text-lg relative z-10">From wireframes to bioluminescent, highly interactive prototypes that simulate the final product feel with zero-gravity continuous motion.</p>
+            <p className="text-slate-300 max-w-3xl text-lg relative z-10">From wireframes to highly interactive prototypes that simulate the final product feel, ensuring logical flow and flawless user journeys.</p>
           </motion.div>
         </div>
       </div>

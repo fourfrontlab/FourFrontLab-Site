@@ -56,7 +56,7 @@ export default function Process() {
   }, []);
 
   return (
-    <section className="py-32 px-6 lg:px-12 max-w-[1400px] mx-auto border-b border-zinc-900" ref={containerRef}>
+    <section className="py-32 px-6 lg:px-12 max-w-[1400px] mx-auto border-b border-zinc-900" ref={containerRef} id="process">
       <div className="mb-24 flex flex-col md:flex-row justify-between items-start md:items-end border-b border-zinc-900 pb-12">
         <h2 className="text-4xl lg:text-5xl font-medium tracking-tight mb-4 md:mb-0">How we build.</h2>
         <p className="font-mono text-zinc-500 text-sm max-w-sm uppercase">Our engineering methodology is iterative, transparent, and built for speed.</p>
