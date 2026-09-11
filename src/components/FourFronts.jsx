@@ -10,32 +10,32 @@ export default function FourFronts() {
   const scrollContainerRef = useRef(null);
 
   useEffect(() => {
-    const panels = gsap.utils.toArray('.front-panel');
-    
-    // Horizontal scroll pinning
-    let scrollTween = gsap.to(panels, {
-      xPercent: -100 * (panels.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        pin: true,
-        scrub: 1,
-        snap: 1 / (panels.length - 1),
-        end: () => "+=" + scrollContainerRef.current.offsetWidth
-      }
-    });
+    let ctx = gsap.context(() => {
+      const panels = gsap.utils.toArray('.front-panel');
+      
+      // Horizontal scroll pinning
+      gsap.to(panels, {
+        xPercent: -100 * (panels.length - 1),
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          pin: true,
+          scrub: 1,
+          snap: 1 / (panels.length - 1),
+          end: () => "+=" + scrollContainerRef.current.offsetWidth
+        }
+      });
+    }, sectionRef);
 
-    return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
-    };
+    return () => ctx.revert();
   }, []);
 
   return (
     <section ref={sectionRef} className="h-screen w-full overflow-hidden bg-[#0A0A0A] flex items-center border-b border-zinc-900">
-      <div ref={scrollContainerRef} className="flex h-full w-[400vw]">
+      <div ref={scrollContainerRef} className="flex h-full w-[400%]">
         
         {/* Panel 1: Frontend */}
-        <div className="front-panel w-screen h-full flex flex-col md:flex-row items-center justify-center p-8 lg:p-24 border-r border-zinc-900 relative">
+        <div className="front-panel w-1/4 h-full flex flex-col md:flex-row items-center justify-center p-8 lg:p-24 border-r border-zinc-900 relative">
           <div className="flex-1 z-10 w-full pr-8">
             <span className="font-mono text-[#CCFF00] text-sm mb-6 block">01 // FRONTEND</span>
             <h2 className="text-4xl lg:text-7xl font-medium tracking-tight mb-8">Pixel-perfect<br/>precision.</h2>
@@ -56,7 +56,7 @@ export default function FourFronts() {
         </div>
 
         {/* Panel 2: Backend */}
-        <div className="front-panel w-screen h-full flex flex-col md:flex-row items-center justify-center p-8 lg:p-24 border-r border-zinc-900 relative">
+        <div className="front-panel w-1/4 h-full flex flex-col md:flex-row items-center justify-center p-8 lg:p-24 border-r border-zinc-900 relative">
           <div className="flex-1 z-10 w-full pr-8">
             <span className="font-mono text-[#CCFF00] text-sm mb-6 block">02 // BACKEND</span>
             <h2 className="text-4xl lg:text-7xl font-medium tracking-tight mb-8">Invisible<br/>power.</h2>
@@ -80,7 +80,7 @@ export default function FourFronts() {
         </div>
 
         {/* Panel 3: UX/UI */}
-        <div className="front-panel w-screen h-full flex flex-col md:flex-row items-center justify-center p-8 lg:p-24 border-r border-zinc-900 relative">
+        <div className="front-panel w-1/4 h-full flex flex-col md:flex-row items-center justify-center p-8 lg:p-24 border-r border-zinc-900 relative">
           <div className="flex-1 z-10 w-full pr-8">
             <span className="font-mono text-[#CCFF00] text-sm mb-6 block">03 // UX & UI</span>
             <h2 className="text-4xl lg:text-7xl font-medium tracking-tight mb-8">Logical<br/>flow.</h2>
@@ -95,7 +95,7 @@ export default function FourFronts() {
         </div>
 
         {/* Panel 4: Strategy/Growth */}
-        <div className="front-panel w-screen h-full flex flex-col md:flex-row items-center justify-center p-8 lg:p-24 relative">
+        <div className="front-panel w-1/4 h-full flex flex-col md:flex-row items-center justify-center p-8 lg:p-24 relative">
           <div className="flex-1 z-10 w-full pr-8">
             <span className="font-mono text-[#CCFF00] text-sm mb-6 block">04 // STRATEGY & GROWTH</span>
             <h2 className="text-4xl lg:text-7xl font-medium tracking-tight mb-8">Measured<br/>impact.</h2>

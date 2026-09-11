@@ -8,38 +8,48 @@ export default function Hero() {
   const logoRef = useRef(null);
 
   useEffect(() => {
-    // Reveal logo
-    gsap.fromTo(logoRef.current,
-      { opacity: 0, y: -20 },
-      { opacity: 1, y: 0, duration: 1, ease: "power3.out", delay: 0.2 }
-    );
+    let ctx = gsap.context(() => {
+      // Reveal logo
+      gsap.fromTo(logoRef.current, 
+        { opacity: 0, y: -20 },
+        { opacity: 1, y: 0, duration: 1, ease: "power3.out", delay: 0.2 }
+      );
 
-    // Custom manual word split instead of premium SplitText plugin
-    const words = textRef.current.innerText.split(' ');
-    textRef.current.innerHTML = '';
-    words.forEach(word => {
-      const span = document.createElement('span');
-      span.innerText = word + ' ';
-      span.style.display = 'inline-block';
-      span.style.overflow = 'hidden';
+      // Protect against double-execution in strict mode
+      if (textRef.current.classList.contains('splitted')) return;
+      textRef.current.classList.add('splitted');
 
-      const innerSpan = document.createElement('span');
-      innerSpan.innerText = word + ' ';
-      innerSpan.style.display = 'inline-block';
-      innerSpan.classList.add('reveal-word');
-      innerSpan.style.transform = 'translateY(100%)';
+      const originalText = textRef.current.innerText;
+      const words = originalText.trim().split(/\s+/);
+      textRef.current.innerHTML = '';
+      
+      words.forEach(word => {
+        const span = document.createElement('span');
+        span.style.display = 'inline-block';
+        span.style.overflow = 'hidden';
+        span.style.verticalAlign = 'top';
+        
+        const innerSpan = document.createElement('span');
+        innerSpan.innerText = word;
+        innerSpan.style.display = 'inline-block';
+        innerSpan.classList.add('reveal-word');
+        innerSpan.style.transform = 'translateY(100%)';
+        
+        span.appendChild(innerSpan);
+        textRef.current.appendChild(span);
+        textRef.current.appendChild(document.createTextNode(' '));
+      });
 
-      span.appendChild(innerSpan);
-      textRef.current.appendChild(span);
-    });
-
-    gsap.to('.reveal-word', {
-      y: '0%',
-      duration: 1.2,
-      stagger: 0.05,
-      ease: "power4.out",
-      delay: 0.5
-    });
+      gsap.to('.reveal-word', { 
+          y: '0%', 
+          duration: 1.2, 
+          stagger: 0.05, 
+          ease: "power4.out", 
+          delay: 0.5 
+      });
+    }, containerRef);
+    
+    return () => ctx.revert();
   }, []);
 
   return (
