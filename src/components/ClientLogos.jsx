@@ -1,3 +1,4 @@
+'use client';
 export default function ClientLogos() {
   const logos = [
     "ACME Corp", "GlobalTech", "Nexus Industries", "Vanguard", "Starlight Media", "Quantum", "Pioneer", "Horizon"
