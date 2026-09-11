@@ -68,12 +68,33 @@ export default function Hero() {
         >
           We engineer digital experiences that perform.
         </h1>
-        <div className="flex gap-4 items-center opacity-0 animate-[fadeIn_1s_ease-out_1.5s_forwards]">
+        
+        <div className="flex gap-4 items-center opacity-0 animate-[fadeIn_1s_ease-out_1.5s_forwards] mb-12">
           <div className="w-16 h-[1px] bg-[#CCFF00]" />
           <span className="font-mono text-sm tracking-widest uppercase text-zinc-500">
             Four Founders. Four Fronts.
           </span>
         </div>
+
+        <div className="opacity-0 animate-[fadeIn_1s_ease-out_1.8s_forwards]">
+          <a href="#contact" className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-sm font-medium text-lg hover:bg-[#CCFF00] transition-colors group">
+            <span>Let's Build Something</span>
+            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      {/* Subtle Background Graphic */}
+      <div className="absolute top-1/2 right-[-100px] lg:right-12 -translate-y-1/2 opacity-30 pointer-events-none hidden md:flex items-center justify-center w-[400px] h-[400px] lg:w-[600px] lg:h-[600px]">
+        <div className="absolute inset-0 border border-dashed border-zinc-700 rounded-full animate-[spin_40s_linear_infinite]">
+          <div className="absolute top-0 left-1/2 w-4 h-4 bg-[#CCFF00] rounded-full shadow-[0_0_20px_#CCFF00] -translate-x-1/2 -translate-y-1/2" />
+        </div>
+        <div className="absolute inset-16 lg:inset-32 border border-zinc-800 rounded-full animate-[spin_20s_linear_infinite_reverse]">
+          <div className="absolute bottom-0 left-1/2 w-2 h-2 bg-white rounded-full -translate-x-1/2 translate-y-1/2" />
+        </div>
+        <div className="w-64 h-64 bg-[#CCFF00]/5 rounded-full blur-3xl" />
       </div>
       <style jsx>{`
         @keyframes fadeIn {

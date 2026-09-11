@@ -64,7 +64,7 @@ export default function Contact() {
               type="submit"
               className="mt-4 bg-[#CCFF00] text-black px-8 py-4 rounded-sm font-medium text-lg hover:bg-white transition-colors flex items-center justify-center gap-3 group"
             >
-              <span>Start a Project</span>
+              <span>Get in Touch</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </form>

@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero';
+import ClientLogos from '@/components/ClientLogos';
 import FourFronts from '@/components/FourFronts';
 import About from '@/components/About';
 import Portfolio from '@/components/Portfolio';
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <ClientLogos />
       <FourFronts />
       <About />
       <Portfolio />
