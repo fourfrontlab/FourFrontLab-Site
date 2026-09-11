@@ -8,7 +8,7 @@ export default function Navbar() {
           <div className="w-6 h-6 bg-[#CCFF00] rounded-sm group-hover:scale-110 transition-transform" />
           <span className="text-xl font-bold tracking-tight text-white">FourFrontLab.</span>
         </Link>
-        
+
         <div className="hidden md:flex items-center gap-8">
           <Link href="#work" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Work</Link>
           <Link href="#process" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Process</Link>

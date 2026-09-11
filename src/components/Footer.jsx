@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-zinc-900 bg-[#0A0A0A] py-12 px-6 lg:px-12">
       <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-        
+
         {/* Brand */}
         <div className="flex flex-col gap-4">
           <Link href="/" className="flex items-center gap-3">
