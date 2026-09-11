@@ -1,6 +1,10 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ArrowUpRight, X } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
@@ -34,12 +38,52 @@ const projects = [
 
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState(null);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      // Header animation
+      gsap.fromTo(".portfolio-header", 
+        { opacity: 0, y: 30 },
+        { 
+          opacity: 1, 
+          y: 0, 
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 80%",
+          }
+        }
+      );
+
+      // Cards staggered animation
+      const cards = gsap.utils.toArray('.portfolio-card');
+      cards.forEach((card, i) => {
+        gsap.fromTo(card,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+            }
+          }
+        );
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <>
-      <section className="py-32 px-6 lg:px-12 max-w-[1400px] mx-auto border-b border-zinc-900 bg-[#0A0A0A]" id="work">
+      <section ref={containerRef} className="py-32 md:py-40 px-6 lg:px-12 max-w-[1400px] mx-auto border-b border-zinc-900 bg-[#0A0A0A]" id="work">
         <div className="mb-20">
-          <h2 className="text-4xl lg:text-5xl font-medium tracking-tight text-white">Deployments</h2>
+          <h2 className="portfolio-header text-5xl lg:text-7xl font-medium tracking-tighter leading-none text-white">Deployments</h2>
         </div>
 
         <div className="flex flex-col gap-16 lg:gap-24">
@@ -47,42 +91,44 @@ export default function Portfolio() {
             <div 
               key={i} 
               onClick={() => setSelectedProject(project)}
-              className="group relative w-full flex flex-col lg:flex-row gap-8 lg:gap-16 border border-zinc-900 bg-[#111] p-6 lg:p-10 rounded-sm hover:border-zinc-700 transition-colors cursor-pointer"
+              className="portfolio-card group relative w-full flex flex-col lg:flex-row gap-8 lg:gap-16 border border-zinc-900 bg-[#111] p-6 lg:p-10 rounded-sm hover:border-zinc-700 hover:scale-[1.01] transition-all duration-500 cursor-pointer shadow-lg"
             >
               
               {/* Image / Mockup Area */}
-              <div className="w-full lg:w-1/2 overflow-hidden rounded-sm relative aspect-[4/3] bg-zinc-900">
+              <div className="w-full lg:w-1/2 overflow-hidden rounded-sm relative aspect-[4/3] bg-zinc-900 border border-zinc-800 group-hover:border-zinc-700 transition-colors">
                  <div 
                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                    style={{ backgroundImage: `url(${project.image})` }}
                  />
                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
+                 {/* Subtle glow overlay on hover */}
+                 <div className="absolute inset-0 bg-[#CCFF00]/10 opacity-0 group-hover:opacity-100 mix-blend-overlay transition-opacity duration-500 pointer-events-none" />
               </div>
               
               {/* Content Area */}
               <div className="w-full lg:w-1/2 flex flex-col justify-center">
                 <div className="flex justify-between items-start mb-6">
-                  <span className="font-mono text-[#CCFF00] text-sm bg-black px-4 py-2 rounded-sm border border-zinc-800">
+                  <span className="font-mono text-[#CCFF00] text-xs uppercase tracking-widest bg-black px-4 py-2 rounded-sm border border-zinc-800 group-hover:border-[#CCFF00]/30 transition-colors">
                     {project.client}
                   </span>
-                  <div className="w-10 h-10 rounded-full bg-zinc-800 text-white flex items-center justify-center group-hover:bg-[#CCFF00] group-hover:text-black transition-colors duration-300">
+                  <div className="w-12 h-12 rounded-full bg-zinc-800 text-white flex items-center justify-center group-hover:bg-[#CCFF00] group-hover:text-black transition-colors duration-300 shadow-md">
                       <ArrowUpRight className="w-5 h-5" />
                   </div>
                 </div>
                 
-                <h3 className="text-4xl lg:text-6xl font-medium tracking-tight mb-6 text-white group-hover:text-[#CCFF00] transition-colors">{project.title}</h3>
+                <h3 className="text-4xl lg:text-6xl font-medium tracking-tighter leading-none mb-6 text-white group-hover:text-[#CCFF00] transition-colors">{project.title}</h3>
                 
                 <div className="flex flex-wrap gap-2 mb-8">
                   {project.stack.map((tech, j) => (
-                     <span key={j} className="text-xs font-mono text-zinc-400 bg-zinc-900 px-3 py-1.5 rounded-sm border border-zinc-800">
+                     <span key={j} className="text-xs font-mono text-zinc-300 bg-zinc-900 px-3 py-1.5 rounded-sm border border-zinc-800">
                        {tech}
                      </span>
                   ))}
                 </div>
                 
-                <div className="mt-auto pt-6 border-t border-zinc-900">
-                  <span className="block text-zinc-500 font-mono text-xs uppercase mb-2">Outcome</span>
-                  <span className="font-inter text-white text-lg">{project.outcome}</span>
+                <div className="mt-auto pt-6 border-t border-zinc-900 group-hover:border-zinc-800 transition-colors">
+                  <span className="block text-zinc-500 font-mono text-xs uppercase mb-2 tracking-widest">Outcome</span>
+                  <span className="font-inter text-white text-lg lg:text-xl font-light leading-relaxed">{project.outcome}</span>
                 </div>
               </div>
               
@@ -93,29 +139,29 @@ export default function Portfolio() {
 
       {/* Modal Overlay */}
       {selectedProject && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-sm" onClick={() => setSelectedProject(null)}>
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md" onClick={() => setSelectedProject(null)}>
           <div className="bg-[#111] border border-zinc-800 rounded-sm w-full max-w-5xl max-h-[90vh] overflow-y-auto flex flex-col shadow-2xl relative animate-[fadeIn_0.3s_ease-out]" onClick={e => e.stopPropagation()}>
             <button 
-              className="absolute top-4 right-4 z-10 w-10 h-10 bg-black/50 hover:bg-[#CCFF00] hover:text-black text-white rounded-full flex items-center justify-center transition-colors"
+              className="absolute top-4 right-4 z-10 w-12 h-12 bg-black/50 hover:bg-[#CCFF00] hover:text-black text-white rounded-full flex items-center justify-center transition-colors"
               onClick={() => setSelectedProject(null)}
             >
-              <X className="w-5 h-5" />
+              <X className="w-6 h-6" />
             </button>
             <div className="w-full relative aspect-video bg-zinc-900 border-b border-zinc-800">
               <img src={selectedProject.modalImage} alt={selectedProject.title} className="w-full h-full object-cover" />
             </div>
             <div className="p-8 lg:p-12">
               <div className="flex justify-between items-start mb-6">
-                <span className="font-mono text-[#CCFF00] text-sm bg-black px-4 py-2 rounded-sm border border-zinc-800">
+                <span className="font-mono text-[#CCFF00] text-xs uppercase tracking-widest bg-black px-4 py-2 rounded-sm border border-zinc-800">
                   {selectedProject.client}
                 </span>
               </div>
-              <h3 className="text-4xl lg:text-5xl font-medium tracking-tight mb-4 text-white">{selectedProject.title}</h3>
-              <p className="text-zinc-400 text-lg mb-8 max-w-3xl leading-relaxed">{selectedProject.description}</p>
+              <h3 className="text-4xl lg:text-6xl font-medium tracking-tighter leading-none mb-6 text-white">{selectedProject.title}</h3>
+              <p className="text-zinc-300 text-lg lg:text-xl mb-8 max-w-3xl leading-relaxed font-light">{selectedProject.description}</p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-zinc-800 pt-8">
                 <div>
-                  <span className="block text-zinc-500 font-mono text-xs uppercase mb-4">Tech Stack</span>
+                  <span className="block text-zinc-500 font-mono text-xs uppercase tracking-widest mb-4">Tech Stack</span>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.stack.map((tech, j) => (
                        <span key={j} className="text-xs font-mono text-zinc-300 bg-zinc-900 px-3 py-1.5 rounded-sm border border-zinc-800">
@@ -125,8 +171,8 @@ export default function Portfolio() {
                   </div>
                 </div>
                 <div>
-                  <span className="block text-zinc-500 font-mono text-xs uppercase mb-2">Outcome</span>
-                  <span className="font-inter text-white text-xl font-medium">{selectedProject.outcome}</span>
+                  <span className="block text-zinc-500 font-mono text-xs uppercase tracking-widest mb-2">Outcome</span>
+                  <span className="font-inter text-white text-xl font-medium leading-relaxed">{selectedProject.outcome}</span>
                 </div>
               </div>
             </div>

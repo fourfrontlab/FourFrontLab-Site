@@ -53,25 +53,27 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={containerRef} className="min-h-screen flex flex-col px-6 md:px-12 relative border-b border-zinc-900 pt-12">
+    <section ref={containerRef} className="min-h-screen flex flex-col px-6 md:px-12 relative border-b border-zinc-900 pt-12 overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-[#CCFF00] rounded-full blur-[150px] opacity-[0.03] pointer-events-none -translate-y-1/2" />
 
       {/* Brand Name / Logo Mark at the very top */}
-      <div ref={logoRef} className="w-full max-w-7xl mx-auto flex items-center gap-4 mb-auto">
-        <div className="w-8 h-8 bg-[#CCFF00] rounded-sm" />
+      <div ref={logoRef} className="w-full max-w-7xl mx-auto flex items-center gap-4 mb-auto relative z-10">
+        <div className="w-8 h-8 bg-[#CCFF00] rounded-sm shadow-[0_0_15px_rgba(204,255,0,0.3)]" />
         <span className="text-3xl md:text-4xl font-bold tracking-tighter text-white">FourFrontLab.</span>
       </div>
 
-      <div className="max-w-7xl w-full mx-auto mb-auto pt-24 pb-32">
+      <div className="max-w-7xl w-full mx-auto mb-auto pt-24 pb-32 relative z-10">
         <h1
           ref={textRef}
-          className="text-5xl md:text-8xl lg:text-9xl font-medium tracking-tighter leading-[1.05] mb-12 font-inter text-[#EBEBEB]"
+          className="text-6xl md:text-8xl lg:text-[10rem] font-medium tracking-tighter leading-[0.95] mb-12 font-inter text-white"
         >
           We engineer digital experiences that perform.
         </h1>
         
         <div className="flex gap-4 items-center opacity-0 animate-[fadeIn_1s_ease-out_1.5s_forwards] mb-12">
-          <div className="w-16 h-[1px] bg-[#CCFF00]" />
-          <span className="font-mono text-sm tracking-widest uppercase text-zinc-500">
+          <div className="w-16 h-[2px] bg-[#CCFF00]" />
+          <span className="font-mono text-sm tracking-widest uppercase text-zinc-400">
             Four Founders. Four Fronts.
           </span>
         </div>

@@ -31,15 +31,18 @@ export default function FourFronts() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="h-screen w-full overflow-hidden bg-[#0A0A0A] flex items-center border-b border-zinc-900">
-      <div ref={scrollContainerRef} className="flex h-full w-[400%]">
+    <section ref={sectionRef} className="h-screen w-full overflow-hidden bg-[#0A0A0A] flex items-center border-b border-zinc-900 relative">
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-[#CCFF00] rounded-full blur-[200px] opacity-[0.02] pointer-events-none -translate-x-1/2 -translate-y-1/2 z-0" />
+      
+      <div ref={scrollContainerRef} className="flex h-full w-[400%] relative z-10">
         
         {/* Panel 1: Frontend */}
         <div className="front-panel w-1/4 h-full flex flex-col md:flex-row items-center justify-center py-8 lg:py-24 px-8 md:px-12 lg:px-12 border-r border-zinc-900 relative gap-8 lg:gap-16">
           <div className="flex-1 z-10 w-full lg:pl-20 xl:pl-32 lg:pr-8">
-            <span className="font-mono text-[#CCFF00] text-sm mb-6 block">01 // FRONTEND</span>
-            <h2 className="text-4xl lg:text-7xl font-medium tracking-tight mb-8">Pixel-perfect<br/>precision.</h2>
-            <p className="text-zinc-400 text-lg lg:text-xl max-w-md">We build fluid, component-driven interfaces that feel alive, using modern frameworks and precise animations.</p>
+            <span className="font-mono text-[#CCFF00] text-sm mb-6 block tracking-widest">01 // FRONTEND</span>
+            <h2 className="text-5xl lg:text-7xl font-medium tracking-tighter leading-none mb-8 text-white">Pixel-perfect<br/>precision.</h2>
+            <p className="text-zinc-300 text-lg lg:text-xl max-w-md font-light">We build fluid, component-driven interfaces that feel alive, using modern frameworks and precise animations.</p>
           </div>
           <div className="flex-1 h-[50vh] w-full border border-zinc-800 bg-[#111] rounded-sm p-8 flex flex-col gap-4 relative overflow-hidden group">
             <div className="w-full h-8 bg-zinc-800/50 rounded-sm" />
@@ -58,9 +61,9 @@ export default function FourFronts() {
         {/* Panel 2: Backend */}
         <div className="front-panel w-1/4 h-full flex flex-col md:flex-row items-center justify-center py-8 lg:py-24 px-8 md:px-12 lg:px-12 border-r border-zinc-900 relative gap-8 lg:gap-16">
           <div className="flex-1 z-10 w-full lg:pl-20 xl:pl-32 lg:pr-8">
-            <span className="font-mono text-[#CCFF00] text-sm mb-6 block">02 // BACKEND</span>
-            <h2 className="text-4xl lg:text-7xl font-medium tracking-tight mb-8">Invisible<br/>power.</h2>
-            <p className="text-zinc-400 text-lg lg:text-xl max-w-md">Scalable architecture, secure APIs, and optimized databases that handle heavy logic without breaking a sweat.</p>
+            <span className="font-mono text-[#CCFF00] text-sm mb-6 block tracking-widest">02 // BACKEND</span>
+            <h2 className="text-5xl lg:text-7xl font-medium tracking-tighter leading-none mb-8 text-white">Invisible<br/>power.</h2>
+            <p className="text-zinc-300 text-lg lg:text-xl max-w-md font-light">Scalable architecture, secure APIs, and optimized databases that handle heavy logic without breaking a sweat.</p>
           </div>
           <div className="flex-1 h-[50vh] w-full border border-zinc-800 bg-black rounded-sm p-6 font-mono text-sm text-zinc-500 relative overflow-hidden flex flex-col">
              <div className="flex items-center gap-2 mb-4 border-b border-zinc-900 pb-4">
@@ -82,9 +85,9 @@ export default function FourFronts() {
         {/* Panel 3: UX/UI */}
         <div className="front-panel w-1/4 h-full flex flex-col md:flex-row items-center justify-center py-8 lg:py-24 px-8 md:px-12 lg:px-12 border-r border-zinc-900 relative gap-8 lg:gap-16">
           <div className="flex-1 z-10 w-full lg:pl-20 xl:pl-32 lg:pr-8">
-            <span className="font-mono text-[#CCFF00] text-sm mb-6 block">03 // UX & UI</span>
-            <h2 className="text-4xl lg:text-7xl font-medium tracking-tight mb-8">Logical<br/>flow.</h2>
-            <p className="text-zinc-400 text-lg lg:text-xl max-w-md">Design systems that make sense. We prototype interactions that guide users frictionlessly from A to B.</p>
+            <span className="font-mono text-[#CCFF00] text-sm mb-6 block tracking-widest">03 // UX & UI</span>
+            <h2 className="text-5xl lg:text-7xl font-medium tracking-tighter leading-none mb-8 text-white">Logical<br/>flow.</h2>
+            <p className="text-zinc-300 text-lg lg:text-xl max-w-md font-light">Design systems that make sense. We prototype interactions that guide users frictionlessly from A to B.</p>
           </div>
           <div className="flex-1 h-[50vh] w-full border border-zinc-800 bg-[#111] rounded-sm p-8 relative flex items-center justify-center group overflow-hidden">
              <div className="w-48 h-48 border border-dashed border-zinc-600 rounded-full flex items-center justify-center relative group-hover:scale-110 transition-transform duration-700">
@@ -97,9 +100,9 @@ export default function FourFronts() {
         {/* Panel 4: Strategy/Growth */}
         <div className="front-panel w-1/4 h-full flex flex-col md:flex-row items-center justify-center py-8 lg:py-24 px-8 md:px-12 lg:px-12 relative gap-8 lg:gap-16">
           <div className="flex-1 z-10 w-full lg:pl-20 xl:pl-32 lg:pr-8">
-            <span className="font-mono text-[#CCFF00] text-sm mb-6 block">04 // STRATEGY & GROWTH</span>
-            <h2 className="text-4xl lg:text-7xl font-medium tracking-tight mb-8">Measured<br/>impact.</h2>
-            <p className="text-zinc-400 text-lg lg:text-xl max-w-md">We don't just ship code. We align technical execution with business objectives to ensure your product actually scales.</p>
+            <span className="font-mono text-[#CCFF00] text-sm mb-6 block tracking-widest">04 // STRATEGY & GROWTH</span>
+            <h2 className="text-5xl lg:text-7xl font-medium tracking-tighter leading-none mb-8 text-white">Measured<br/>impact.</h2>
+            <p className="text-zinc-300 text-lg lg:text-xl max-w-md font-light">We don't just ship code. We align technical execution with business objectives to ensure your product actually scales.</p>
           </div>
           <div className="flex-1 h-[50vh] w-full border border-zinc-800 bg-black rounded-sm p-8 relative flex items-end gap-4 overflow-hidden group">
              {/* Simple bar chart growth animation */}
