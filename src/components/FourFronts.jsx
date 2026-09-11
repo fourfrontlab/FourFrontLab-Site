@@ -94,17 +94,19 @@ export default function FourFronts() {
           </div>
         </div>
 
-        {/* Panel 4: What's Next */}
+        {/* Panel 4: Strategy/Growth */}
         <div className="front-panel w-screen h-full flex flex-col md:flex-row items-center justify-center p-8 lg:p-24 relative">
           <div className="flex-1 z-10 w-full pr-8">
-            <span className="font-mono text-[#CCFF00] text-sm mb-6 block">04 // WHAT'S NEXT</span>
-            <h2 className="text-4xl lg:text-7xl font-medium tracking-tight mb-8">Future<br/>tooling.</h2>
-            <p className="text-zinc-400 text-lg lg:text-xl max-w-md">Exploring the bleeding edge. AI workflows, spatial computing, and next-gen integration frameworks.</p>
+            <span className="font-mono text-[#CCFF00] text-sm mb-6 block">04 // STRATEGY & GROWTH</span>
+            <h2 className="text-4xl lg:text-7xl font-medium tracking-tight mb-8">Measured<br/>impact.</h2>
+            <p className="text-zinc-400 text-lg lg:text-xl max-w-md">We don't just ship code. We align technical execution with business objectives to ensure your product actually scales.</p>
           </div>
-          <div className="flex-1 h-[50vh] w-full border border-zinc-800 bg-black rounded-sm p-8 relative flex items-center justify-center overflow-hidden">
-             <div className="absolute w-[150%] h-[150%] border-[1px] border-zinc-900 rounded-full animate-[spin_20s_linear_infinite]" />
-             <div className="absolute w-[100%] h-[100%] border-[1px] border-zinc-800 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
-             <div className="absolute w-16 h-16 bg-zinc-800 rounded-sm rotate-45 mix-blend-difference group-hover:bg-[#CCFF00] transition-colors duration-700" />
+          <div className="flex-1 h-[50vh] w-full border border-zinc-800 bg-black rounded-sm p-8 relative flex items-end gap-4 overflow-hidden group">
+             {/* Simple bar chart growth animation */}
+             <div className="w-1/4 bg-zinc-800 rounded-t-sm h-[30%] group-hover:bg-zinc-700 transition-colors duration-500" />
+             <div className="w-1/4 bg-zinc-800 rounded-t-sm h-[50%] group-hover:bg-zinc-600 transition-colors duration-500 delay-100" />
+             <div className="w-1/4 bg-zinc-800 rounded-t-sm h-[70%] group-hover:bg-zinc-500 transition-colors duration-500 delay-200" />
+             <div className="w-1/4 bg-zinc-700 rounded-t-sm h-[40%] group-hover:h-[90%] group-hover:bg-[#CCFF00] transition-all duration-700 delay-300 ease-out" />
           </div>
         </div>
 
