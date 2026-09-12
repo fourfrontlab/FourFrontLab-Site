@@ -1,10 +1,13 @@
+import dynamic from 'next/dynamic';
 import Hero from '@/components/Hero';
-import FourFronts from '@/components/FourFronts';
-import Stats from '@/components/Stats';
-import Portfolio from '@/components/Portfolio';
-import Process from '@/components/Process';
-import Founders from '@/components/Founders';
-import Contact from '@/components/Contact';
+
+// Components below the fold are loaded asynchronously to reduce initial JS payload.
+const FourFronts = dynamic(() => import('@/components/FourFronts'), { ssr: true });
+const Stats = dynamic(() => import('@/components/Stats'), { ssr: true });
+const Portfolio = dynamic(() => import('@/components/Portfolio'), { ssr: true });
+const Process = dynamic(() => import('@/components/Process'), { ssr: true });
+const Founders = dynamic(() => import('@/components/Founders'), { ssr: true });
+const Contact = dynamic(() => import('@/components/Contact'), { ssr: true });
 
 export default function Home() {
   return (

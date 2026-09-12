@@ -5,35 +5,9 @@ import Link from 'next/link';
 
 export default function Hero() {
   const containerRef = useRef(null);
-  const textRef = useRef(null);
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      // Protect against double-execution in strict mode
-      if (textRef.current.classList.contains('splitted')) return;
-      textRef.current.classList.add('splitted');
-
-      const originalText = textRef.current.innerText;
-      const words = originalText.trim().split(/\s+/);
-      textRef.current.innerHTML = '';
-
-      words.forEach(word => {
-        const span = document.createElement('span');
-        span.style.display = 'inline-block';
-        span.style.overflow = 'hidden';
-        span.style.verticalAlign = 'top';
-
-        const innerSpan = document.createElement('span');
-        innerSpan.innerText = word;
-        innerSpan.style.display = 'inline-block';
-        innerSpan.classList.add('reveal-word');
-        innerSpan.style.transform = 'translateY(100%)';
-
-        span.appendChild(innerSpan);
-        textRef.current.appendChild(span);
-        textRef.current.appendChild(document.createTextNode(' '));
-      });
-
       gsap.to('.reveal-word', {
         y: '0%',
         duration: 1.2,
@@ -46,17 +20,23 @@ export default function Hero() {
     return () => ctx.revert();
   }, []);
 
+  const headline = "We engineer digital experiences that perform.";
+  const words = headline.split(' ');
+
   return (
     <section ref={containerRef} className="min-h-screen flex flex-col justify-center px-6 md:px-12 relative overflow-hidden bg-[#0A0A0A]">
       {/* Background Glow */}
       <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-[#C6FF00] rounded-full blur-[150px] opacity-[0.03] pointer-events-none -translate-y-1/2" />
 
       <div className="max-w-[1400px] w-full mx-auto relative z-10 pt-20">
-        <h1
-          ref={textRef}
-          className="text-6xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-[0.95] mb-12 font-space text-white max-w-5xl"
-        >
-          We engineer digital experiences that perform.
+        <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-[0.95] mb-12 font-space text-white max-w-5xl">
+          {words.map((word, i) => (
+            <span key={i} className="inline-block overflow-hidden align-top mr-[0.25em]">
+              <span className="reveal-word inline-block translate-y-[100%]">
+                {word}
+              </span>
+            </span>
+          ))}
         </h1>
 
         <div className="flex gap-4 items-center opacity-0 animate-[fadeIn_1s_ease-out_1s_forwards] mb-12">

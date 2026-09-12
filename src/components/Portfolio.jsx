@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import { ArrowUpRight, X } from 'lucide-react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -96,9 +97,12 @@ export default function Portfolio() {
               >
                 {/* Image / Mockup Area */}
                 <div className="w-full lg:w-1/2 overflow-hidden rounded-sm relative aspect-[4/3] bg-white/5 border border-white/10 group-hover:border-white/20 transition-colors">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                    style={{ backgroundImage: `url(${project.image})` }}
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500" />
                   {/* Subtle glow overlay on hover */}
@@ -148,7 +152,7 @@ export default function Portfolio() {
               <X className="w-6 h-6" />
             </button>
             <div className="w-full relative aspect-video bg-white/5 border-b border-white/10">
-              <img src={selectedProject.modalImage} alt={selectedProject.title} className="w-full h-full object-cover" />
+              <Image src={selectedProject.modalImage} alt={selectedProject.title} fill className="object-cover" sizes="100vw" />
             </div>
             <div className="p-8 lg:p-12">
               <div className="flex justify-between items-start mb-6">
