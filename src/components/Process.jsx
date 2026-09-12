@@ -76,7 +76,7 @@ export default function Process() {
       
       <div className="max-w-[1400px] mx-auto relative z-10">
         <div className="mb-24 flex flex-col md:flex-row justify-between items-start md:items-end border-b border-[#E0E2E5] pb-12">
-          <h2 className="process-header text-5xl lg:text-7xl font-bold tracking-tighter leading-none mb-6 md:mb-0 font-space text-[#1A1A1A]">How we build.</h2>
+          <h2 className="process-header text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter leading-none mb-6 md:mb-0 font-space text-[#1A1A1A]">How we build.</h2>
           <p className="process-header font-mono text-[#5A5A5A] text-sm max-w-sm uppercase tracking-widest leading-relaxed">Our engineering methodology is iterative, transparent, and built for speed.</p>
         </div>
 

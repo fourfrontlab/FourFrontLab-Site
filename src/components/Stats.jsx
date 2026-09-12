@@ -14,14 +14,17 @@ export default function Stats() {
       
       counters.forEach((counter) => {
         const target = parseFloat(counter.getAttribute('data-target'));
-        gsap.to(counter, {
-          innerHTML: target,
+        const obj = { val: 0 };
+        gsap.to(obj, {
+          val: target,
           duration: 2,
-          snap: { innerHTML: 1 },
           ease: "power2.out",
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 80%",
+          },
+          onUpdate: () => {
+            counter.textContent = Math.floor(obj.val);
           }
         });
       });
@@ -35,7 +38,7 @@ export default function Stats() {
       <div className="max-w-[1400px] mx-auto relative z-10 flex flex-col md:flex-row gap-16 md:gap-8 items-start md:items-center justify-between">
         
         <div className="md:w-1/3">
-          <h2 className="text-4xl md:text-5xl font-bold font-space text-[#1A1A1A] tracking-tight mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold font-space text-[#1A1A1A] tracking-tight mb-4">
             Built by engineers, not account managers.
           </h2>
           <p className="text-[#5A5A5A] text-lg">
@@ -45,7 +48,7 @@ export default function Stats() {
 
         <div className="md:w-2/3 flex flex-col sm:flex-row gap-8 sm:gap-4 justify-around w-full">
           <div className="flex flex-col border-l-2 border-[#0E5C8C]/40 pl-6">
-            <div className="flex items-baseline text-[#1A1A1A] font-space font-bold text-6xl md:text-7xl">
+            <div className="flex items-baseline text-[#1A1A1A] font-space font-bold text-5xl md:text-7xl">
               <span className="stat-counter" data-target="40">0</span>
               <span className="text-[#0E5C8C]">+</span>
             </div>
@@ -53,7 +56,7 @@ export default function Stats() {
           </div>
 
           <div className="flex flex-col border-l-2 border-[#0E5C8C]/40 pl-6">
-            <div className="flex items-baseline text-[#1A1A1A] font-space font-bold text-6xl md:text-7xl">
+            <div className="flex items-baseline text-[#1A1A1A] font-space font-bold text-5xl md:text-7xl">
               <span className="stat-counter" data-target="10">0</span>
               <span className="text-[#0E5C8C]">+</span>
             </div>
@@ -61,10 +64,10 @@ export default function Stats() {
           </div>
 
           <div className="flex flex-col border-l-2 border-[#0E5C8C]/40 pl-6">
-            <div className="flex items-baseline text-[#1A1A1A] font-space font-bold text-6xl md:text-7xl">
+            <div className="flex items-baseline text-[#1A1A1A] font-space font-bold text-5xl md:text-7xl">
               <span className="text-[#2BA9D1] mr-1">&lt;</span>
               <span className="stat-counter" data-target="2">0</span>
-              <span className="text-4xl ml-1 text-[#1A1A1A]">h</span>
+              <span className="text-3xl md:text-4xl ml-1 text-[#1A1A1A]">h</span>
             </div>
             <span className="text-[#5A5A5A] font-mono tracking-widest text-sm mt-2 uppercase">Avg Response Time</span>
           </div>

@@ -51,7 +51,7 @@ export default function Founders() {
     <section className="section-padding px-6 lg:px-12 bg-[#F0F1F3] border-b border-[#E0E2E5] overflow-hidden" id="team" ref={containerRef}>
       <div className="max-w-[1400px] mx-auto">
         <div className="mb-24 max-w-3xl">
-          <h2 className="founder-header text-5xl lg:text-7xl font-bold tracking-tighter leading-none mb-10 font-space text-[#1A1A1A]">The Four Fronts.</h2>
+          <h2 className="founder-header text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter leading-none mb-10 font-space text-[#1A1A1A]">The Four Fronts.</h2>
           <p className="founder-header text-[#5A5A5A] text-xl lg:text-2xl leading-relaxed mb-6 font-light">
             FourFrontLab isn't a massive agency with layers of account managers. We are four dedicated partners, each commanding a specific technical front.
           </p>
@@ -72,10 +72,10 @@ export default function Founders() {
             <h3 className="text-2xl font-bold font-space text-[#1A1A1A] mb-2 group-hover:text-[#0E5C8C] transition-colors">Muhammad Taha Nadeem</h3>
             <span className="font-mono text-[#2BA9D1] text-xs uppercase tracking-widest block mb-4">Frontend / Engineering</span>
             <div className="flex gap-4">
-              <a href="https://github.com/MTahaNadeem" target="_blank" rel="noopener noreferrer" className="text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">
+              <a href="https://github.com/MTahaNadeem" target="_blank" rel="noopener noreferrer" className="text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center -ml-3">
                 <FaGithub className="w-5 h-5" />
               </a>
-              <a href="https://www.linkedin.com/in/mtahanadeem/" target="_blank" rel="noopener noreferrer" className="text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">
+              <a href="https://www.linkedin.com/in/mtahanadeem/" target="_blank" rel="noopener noreferrer" className="text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center">
                 <FaLinkedin className="w-5 h-5" />
               </a>
             </div>
@@ -90,10 +90,10 @@ export default function Founders() {
             <h3 className="text-2xl font-bold font-space text-[#1A1A1A] mb-2 group-hover:text-[#0E5C8C] transition-colors">Abdul Haseeb</h3>
             <span className="font-mono text-[#2BA9D1] text-xs uppercase tracking-widest block mb-4">Backend / Architecture</span>
             <div className="flex gap-4">
-              <a href="https://github.com/haseeb786-code" target="_blank" rel="noopener noreferrer" className="text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">
+              <a href="https://github.com/haseeb786-code" target="_blank" rel="noopener noreferrer" className="text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center -ml-3">
                 <FaGithub className="w-5 h-5" />
               </a>
-              <a href="https://www.linkedin.com/in/abdul-haseeb-4a2925340/" target="_blank" rel="noopener noreferrer" className="text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">
+              <a href="https://www.linkedin.com/in/abdul-haseeb-4a2925340/" target="_blank" rel="noopener noreferrer" className="text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center">
                 <FaLinkedin className="w-5 h-5" />
               </a>
             </div>
@@ -108,10 +108,10 @@ export default function Founders() {
             <h3 className="text-2xl font-bold font-space text-[#1A1A1A] mb-2 group-hover:text-[#0E5C8C] transition-colors">Syed Haseeb Badshah</h3>
             <span className="font-mono text-[#2BA9D1] text-xs uppercase tracking-widest block mb-4">UX/UI / Design System</span>
             <div className="flex gap-4">
-              <a href="https://github.com/syed-haseeb-badshah" target="_blank" rel="noopener noreferrer" className="text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">
+              <a href="https://github.com/syed-haseeb-badshah" target="_blank" rel="noopener noreferrer" className="text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center -ml-3">
                 <FaGithub className="w-5 h-5" />
               </a>
-              <a href="https://www.linkedin.com/in/syed-haseeb-badshah/" target="_blank" rel="noopener noreferrer" className="text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">
+              <a href="https://www.linkedin.com/in/syed-haseeb-badshah/" target="_blank" rel="noopener noreferrer" className="text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center">
                 <FaLinkedin className="w-5 h-5" />
               </a>
             </div>
@@ -126,10 +126,10 @@ export default function Founders() {
             <h3 className="text-2xl font-bold font-space text-[#1A1A1A] mb-2 group-hover:text-[#0E5C8C] transition-colors">Mustafa Arfat</h3>
             <span className="font-mono text-[#2BA9D1] text-xs uppercase tracking-widest block mb-4">Strategy / Growth</span>
             <div className="flex gap-4">
-              <a href="https://github.com/cust40078-sudo" target="_blank" rel="noopener noreferrer" className="text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">
+              <a href="https://github.com/cust40078-sudo" target="_blank" rel="noopener noreferrer" className="text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center -ml-3">
                 <FaGithub className="w-5 h-5" />
               </a>
-              <a href="https://www.linkedin.com/in/raja-mustafa-030749422/" target="_blank" rel="noopener noreferrer" className="text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">
+              <a href="https://www.linkedin.com/in/raja-mustafa-030749422/" target="_blank" rel="noopener noreferrer" className="text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center">
                 <FaLinkedin className="w-5 h-5" />
               </a>
             </div>

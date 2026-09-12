@@ -29,11 +29,11 @@ export default function Hero() {
       <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-[#2BA9D1] rounded-full blur-[200px] opacity-[0.07] pointer-events-none -translate-y-1/2" />
 
       <div className="max-w-[1400px] w-full mx-auto relative z-10 pt-20">
-        <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-[0.95] mb-12 font-space text-[#1A1A1A] max-w-5xl">
+        <h1 className="text-5xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-[0.95] mb-12 font-space text-[#1A1A1A] max-w-5xl">
           {words.map((word, i) => (
-            <span key={i} className="inline-block overflow-hidden align-top mr-[0.25em]">
+            <span key={i} className="inline-block overflow-hidden align-top">
               <span className="reveal-word inline-block translate-y-[100%]">
-                {word}
+                {word}{i !== words.length - 1 ? '\u00A0' : ''}
               </span>
             </span>
           ))}

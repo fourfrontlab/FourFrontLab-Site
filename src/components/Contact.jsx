@@ -47,7 +47,7 @@ export default function Contact() {
         
         {/* Left: Heading & Direct Contact */}
         <div className="flex flex-col justify-center">
-          <h2 className="contact-element text-5xl lg:text-7xl font-bold tracking-tighter leading-none mb-10 font-space text-[#1A1A1A]">Let's build.</h2>
+          <h2 className="contact-element text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter leading-none mb-10 font-space text-[#1A1A1A]">Let's build.</h2>
           <p className="contact-element text-[#5A5A5A] text-xl lg:text-2xl leading-relaxed mb-12 max-w-md font-light">
             Ready to scale your digital presence? Fill out the form or drop us an email to get started. We aim to respond within 2 hours.
           </p>
