@@ -48,7 +48,7 @@ export default function Hero() {
 
         <div className="opacity-0 animate-[fadeIn_1s_ease-out_1.3s_forwards]">
           <Link href="#contact" className="inline-flex items-center gap-3 bg-[#0E5C8C] border border-[#0E5C8C] text-white px-8 py-4 rounded-sm font-medium text-lg hover:bg-[#2BA9D1] hover:border-[#2BA9D1] transition-all group">
-            <span>Let's Build Something</span>
+            <span>Let&apos;s Build Something</span>
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

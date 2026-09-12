@@ -166,7 +166,7 @@ export default function FourFronts() {
           <div className="w-full pt-8">
             <span className="font-mono text-[#0E5C8C] text-sm mb-4 block tracking-widest">04 // STRATEGY &amp; GROWTH</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-space text-[#1A1A1A]">Measured<br />impact.</h2>
-            <p className="text-[#5A5A5A] text-lg lg:text-xl max-w-md font-light">We don't just ship code. We align technical execution with business objectives to ensure your product actually scales.</p>
+            <p className="text-[#5A5A5A] text-lg lg:text-xl max-w-md font-light">We don&apos;t just ship code. We align technical execution with business objectives to ensure your product actually scales.</p>
           </div>
           <div className="w-full max-w-[400px] h-[320px] mx-auto border border-[#E0E2E5] bg-[#FAFAFA] shadow-sm rounded-sm p-6 relative flex flex-col overflow-hidden group">
             {/* Chart Header */}
