@@ -20,10 +20,10 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div className="flex gap-6">
-          <Link href="#work" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Work</Link>
-          <Link href="#process" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Process</Link>
-          <Link href="#team" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Team</Link>
-          <Link href="#contact" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Contact</Link>
+          <Link href="/work" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Work</Link>
+          <Link href="/process" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Process</Link>
+          <Link href="/team" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Team</Link>
+          <Link href="/contact" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Contact</Link>
         </div>
 
         {/* Socials */}

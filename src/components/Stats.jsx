@@ -9,11 +9,21 @@ export default function Stats() {
   const sectionRef = useRef(null);
   const countersRef = useRef([]);
 
+  countersRef.current = [];
+
   useEffect(() => {
+    console.log("Stats counter component mounted.");
+    console.log("Target values found on spans:", countersRef.current.map(c => c?.getAttribute('data-target')));
+
     let ctx = gsap.context(() => {
       countersRef.current.forEach((counter) => {
         if (!counter) return;
         const target = parseFloat(counter.getAttribute('data-target'));
+        if (isNaN(target)) {
+          console.warn("Target is NaN for counter", counter);
+          return;
+        }
+        
         const obj = { val: 0 };
         gsap.to(obj, {
           val: target,

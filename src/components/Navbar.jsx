@@ -11,6 +11,7 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
+          <Link href="/" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Home</Link>
           <Link href="/work" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Work</Link>
           <Link href="/process" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Process</Link>
           <Link href="/pricing" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Pricing</Link>
