@@ -90,7 +90,7 @@ export default function Portfolio({ teaser = false }) {
         </div>
 
         <div className="flex flex-col gap-16 lg:gap-24">
-          {projects.map((project, i) => (
+          {(teaser ? projects.slice(0, 2) : projects).map((project, i) => (
             <Link
               key={i}
               href={`/work/${project.slug}`}
