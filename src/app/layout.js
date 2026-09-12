@@ -61,6 +61,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrains.variable} antialiased`} suppressHydrationWarning={true}>
       <head>
+        <meta name="google-site-verification" content="sYR99Z5ryt4CEIvEblASNnf3MQ-_uImraol1piBUBms" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
