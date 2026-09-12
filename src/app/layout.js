@@ -24,8 +24,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrains.variable} antialiased`} suppressHydrationWarning={true}>
-      <body className="min-h-screen bg-[#0A0A0A] text-[#A0A0A0] selection:bg-[#C6FF00] selection:text-black font-inter" suppressHydrationWarning={true}>
-        <div className="fixed inset-0 bg-noise z-[9999] pointer-events-none mix-blend-overlay opacity-30"></div>
+      <body className="min-h-screen bg-[#F0F1F3] text-[#5A5A5A] selection:bg-[#0E5C8C] selection:text-white font-inter" suppressHydrationWarning={true}>
+        <div className="fixed inset-0 bg-noise z-[9999] pointer-events-none mix-blend-multiply opacity-20"></div>
         <Navbar />
         <LenisProvider>
           {children}

@@ -72,28 +72,28 @@ export default function Process() {
   }, []);
 
   return (
-    <section className="section-padding px-6 lg:px-12 bg-[#0A0A0A] border-b border-white/10 relative" ref={containerRef} id="process">
+    <section className="section-padding px-6 lg:px-12 bg-[#F0F1F3] border-b border-[#E0E2E5] relative" ref={containerRef} id="process">
       
       <div className="max-w-[1400px] mx-auto relative z-10">
-        <div className="mb-24 flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/10 pb-12">
-          <h2 className="process-header text-5xl lg:text-7xl font-bold tracking-tighter leading-none mb-6 md:mb-0 font-space text-white">How we build.</h2>
-          <p className="process-header font-mono text-[#A0A0A0] text-sm max-w-sm uppercase tracking-widest leading-relaxed">Our engineering methodology is iterative, transparent, and built for speed.</p>
+        <div className="mb-24 flex flex-col md:flex-row justify-between items-start md:items-end border-b border-[#E0E2E5] pb-12">
+          <h2 className="process-header text-5xl lg:text-7xl font-bold tracking-tighter leading-none mb-6 md:mb-0 font-space text-[#1A1A1A]">How we build.</h2>
+          <p className="process-header font-mono text-[#5A5A5A] text-sm max-w-sm uppercase tracking-widest leading-relaxed">Our engineering methodology is iterative, transparent, and built for speed.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24 relative">
           
-          {/* Abstract animated lines in the background to break up text */}
+          {/* Abstract animated lines */}
           <div className="absolute inset-0 pointer-events-none -z-10 hidden md:block opacity-10">
             <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-              <path className="animate-[dash_10s_linear_infinite]" d="M 10 10 L 300 300 M 500 100 L 200 400" stroke="#C6FF00" strokeWidth="1" strokeDasharray="10 10" fill="none"/>
+              <path className="animate-[dash_10s_linear_infinite]" d="M 10 10 L 300 300 M 500 100 L 200 400" stroke="#0E5C8C" strokeWidth="1" strokeDasharray="10 10" fill="none"/>
             </svg>
           </div>
 
           {steps.map((step, i) => (
-            <div key={i} className="process-step group flex flex-col gap-6 p-8 border border-transparent hover:border-white/10 hover:bg-[#141414] rounded-sm transition-all duration-500 hover:-translate-y-1">
-              <span className="font-mono text-5xl lg:text-7xl font-bold tracking-tighter text-white/20 group-hover:text-[#C6FF00] transition-colors duration-500">{step.num}</span>
-              <h3 className="text-3xl lg:text-4xl font-bold font-space text-white">{step.title}</h3>
-              <p className="text-[#A0A0A0] text-lg lg:text-xl leading-relaxed font-light">{step.desc}</p>
+            <div key={i} className="process-step group flex flex-col gap-6 p-8 border border-transparent hover:border-[#E0E2E5] hover:bg-[#FAFAFA] rounded-sm transition-all duration-500 hover:-translate-y-1">
+              <span className="font-mono text-5xl lg:text-7xl font-bold tracking-tighter text-[#1A1A1A]/15 group-hover:text-[#0E5C8C] transition-colors duration-500">{step.num}</span>
+              <h3 className="text-3xl lg:text-4xl font-bold font-space text-[#1A1A1A]">{step.title}</h3>
+              <p className="text-[#5A5A5A] text-lg lg:text-xl leading-relaxed font-light">{step.desc}</p>
             </div>
           ))}
         </div>

@@ -82,10 +82,10 @@ export default function Portfolio() {
 
   return (
     <>
-      <section ref={containerRef} className="section-padding px-6 lg:px-12 bg-[#0A0A0A] border-b border-white/10" id="work">
+      <section ref={containerRef} className="section-padding px-6 lg:px-12 bg-[#F0F1F3] border-b border-[#E0E2E5]" id="work">
         <div className="max-w-[1400px] mx-auto">
           <div className="mb-20">
-            <h2 className="portfolio-header text-5xl lg:text-7xl font-bold tracking-tighter leading-none font-space text-white">Deployments</h2>
+            <h2 className="portfolio-header text-5xl lg:text-7xl font-bold tracking-tighter leading-none font-space text-[#1A1A1A]">Deployments</h2>
           </div>
 
           <div className="flex flex-col gap-16 lg:gap-24">
@@ -93,10 +93,10 @@ export default function Portfolio() {
               <div
                 key={i}
                 onClick={() => setSelectedProject(project)}
-                className="portfolio-card group relative w-full flex flex-col lg:flex-row gap-8 lg:gap-16 border border-white/10 bg-[#141414] p-6 lg:p-10 rounded-sm hover:border-white/30 hover:-translate-y-1 transition-all duration-500 cursor-pointer shadow-sm"
+                className="portfolio-card group relative w-full flex flex-col lg:flex-row gap-8 lg:gap-16 border border-[#E0E2E5] bg-[#FAFAFA] p-6 lg:p-10 rounded-sm hover:border-[#0E5C8C]/40 hover:-translate-y-1 transition-all duration-500 cursor-pointer shadow-sm"
               >
                 {/* Image / Mockup Area */}
-                <div className="w-full lg:w-1/2 overflow-hidden rounded-sm relative aspect-[4/3] bg-white/5 border border-white/10 group-hover:border-white/20 transition-colors">
+                <div className="w-full lg:w-1/2 overflow-hidden rounded-sm relative aspect-[4/3] bg-[#E8EAF0] border border-[#E0E2E5] group-hover:border-[#0E5C8C]/30 transition-colors">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -104,35 +104,35 @@ export default function Portfolio() {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500" />
-                  {/* Subtle glow overlay on hover */}
-                  <div className="absolute inset-0 bg-[#C6FF00]/10 opacity-0 group-hover:opacity-100 mix-blend-overlay transition-opacity duration-500 pointer-events-none" />
+                  <div className="absolute inset-0 bg-white/20 group-hover:bg-transparent transition-colors duration-500" />
+                  {/* Blue overlay on hover */}
+                  <div className="absolute inset-0 bg-[#0E5C8C]/05 opacity-0 group-hover:opacity-100 mix-blend-multiply transition-opacity duration-500 pointer-events-none" />
                 </div>
 
                 {/* Content Area */}
                 <div className="w-full lg:w-1/2 flex flex-col justify-center">
                   <div className="flex justify-between items-start mb-6">
-                    <span className="font-mono text-[#C6FF00] text-xs uppercase tracking-widest bg-white/5 px-4 py-2 rounded-sm border border-white/10 group-hover:border-[#C6FF00]/30 transition-colors">
+                    <span className="font-mono text-[#0E5C8C] text-xs uppercase tracking-widest bg-[#0E5C8C]/8 px-4 py-2 rounded-sm border border-[#0E5C8C]/20 group-hover:border-[#0E5C8C]/40 transition-colors">
                       {project.client}
                     </span>
-                    <div className="w-12 h-12 rounded-full bg-white/5 text-white flex items-center justify-center group-hover:bg-[#C6FF00] group-hover:text-black transition-colors duration-300 border border-white/10">
+                    <div className="w-12 h-12 rounded-full bg-[#0E5C8C]/8 text-[#0E5C8C] flex items-center justify-center group-hover:bg-[#0E5C8C] group-hover:text-white transition-colors duration-300 border border-[#0E5C8C]/20">
                       <ArrowUpRight className="w-5 h-5" />
                     </div>
                   </div>
 
-                  <h3 className="text-4xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-space text-white group-hover:text-[#C6FF00] transition-colors">{project.title}</h3>
+                  <h3 className="text-4xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-space text-[#1A1A1A] group-hover:text-[#0E5C8C] transition-colors">{project.title}</h3>
 
                   <div className="flex flex-wrap gap-2 mb-8">
                     {project.stack.map((tech, j) => (
-                      <span key={j} className="text-xs font-mono text-[#A0A0A0] bg-white/5 px-3 py-1.5 rounded-sm border border-white/10">
+                      <span key={j} className="text-xs font-mono text-[#5A5A5A] bg-[#E8EAF0] px-3 py-1.5 rounded-sm border border-[#E0E2E5]">
                         {tech}
                       </span>
                     ))}
                   </div>
 
-                  <div className="mt-auto pt-6 border-t border-white/10 group-hover:border-white/20 transition-colors">
-                    <span className="block text-[#A0A0A0] font-mono text-xs uppercase mb-2 tracking-widest">Outcome</span>
-                    <span className="font-inter text-white text-lg lg:text-xl font-light leading-relaxed">{project.outcome}</span>
+                  <div className="mt-auto pt-6 border-t border-[#E0E2E5] group-hover:border-[#0E5C8C]/20 transition-colors">
+                    <span className="block text-[#5A5A5A] font-mono text-xs uppercase mb-2 tracking-widest">Outcome</span>
+                    <span className="font-inter text-[#1A1A1A] text-lg lg:text-xl font-light leading-relaxed">{project.outcome}</span>
                   </div>
                 </div>
               </div>
@@ -143,40 +143,40 @@ export default function Portfolio() {
 
       {/* Modal Overlay */}
       {selectedProject && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md" onClick={() => setSelectedProject(null)}>
-          <div className="bg-[#141414] border border-white/10 rounded-sm w-full max-w-5xl max-h-[90vh] overflow-y-auto flex flex-col shadow-2xl relative animate-[fadeIn_0.3s_ease-out]" onClick={e => e.stopPropagation()}>
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-[#1A1A1A]/70 backdrop-blur-md" onClick={() => setSelectedProject(null)}>
+          <div className="bg-[#FAFAFA] border border-[#E0E2E5] rounded-sm w-full max-w-5xl max-h-[90vh] overflow-y-auto flex flex-col shadow-2xl relative animate-[fadeIn_0.3s_ease-out]" onClick={e => e.stopPropagation()}>
             <button
-              className="absolute top-4 right-4 z-10 w-12 h-12 bg-[#0A0A0A] border border-white/10 hover:border-[#C6FF00] hover:bg-[#C6FF00] text-white hover:text-black rounded-full flex items-center justify-center transition-all shadow-sm"
+              className="absolute top-4 right-4 z-10 w-12 h-12 bg-[#F0F1F3] border border-[#E0E2E5] hover:border-[#0E5C8C] hover:bg-[#0E5C8C] text-[#1A1A1A] hover:text-white rounded-full flex items-center justify-center transition-all shadow-sm"
               onClick={() => setSelectedProject(null)}
             >
               <X className="w-6 h-6" />
             </button>
-            <div className="w-full relative aspect-video bg-white/5 border-b border-white/10">
+            <div className="w-full relative aspect-video bg-[#E8EAF0] border-b border-[#E0E2E5]">
               <Image src={selectedProject.modalImage} alt={selectedProject.title} fill className="object-cover" sizes="100vw" />
             </div>
             <div className="p-8 lg:p-12">
               <div className="flex justify-between items-start mb-6">
-                <span className="font-mono text-[#C6FF00] text-xs uppercase tracking-widest bg-white/5 px-4 py-2 rounded-sm border border-white/10">
+                <span className="font-mono text-[#0E5C8C] text-xs uppercase tracking-widest bg-[#0E5C8C]/8 px-4 py-2 rounded-sm border border-[#0E5C8C]/20">
                   {selectedProject.client}
                 </span>
               </div>
-              <h3 className="text-4xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-space text-white">{selectedProject.title}</h3>
-              <p className="text-[#A0A0A0] text-lg lg:text-xl mb-8 max-w-3xl leading-relaxed font-light">{selectedProject.description}</p>
+              <h3 className="text-4xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-space text-[#1A1A1A]">{selectedProject.title}</h3>
+              <p className="text-[#5A5A5A] text-lg lg:text-xl mb-8 max-w-3xl leading-relaxed font-light">{selectedProject.description}</p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-white/10 pt-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-[#E0E2E5] pt-8">
                 <div>
-                  <span className="block text-[#A0A0A0] font-mono text-xs uppercase tracking-widest mb-4">Tech Stack</span>
+                  <span className="block text-[#5A5A5A] font-mono text-xs uppercase tracking-widest mb-4">Tech Stack</span>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.stack.map((tech, j) => (
-                      <span key={j} className="text-xs font-mono text-[#A0A0A0] bg-white/5 px-3 py-1.5 rounded-sm border border-white/10">
+                      <span key={j} className="text-xs font-mono text-[#5A5A5A] bg-[#E8EAF0] px-3 py-1.5 rounded-sm border border-[#E0E2E5]">
                         {tech}
                       </span>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <span className="block text-[#A0A0A0] font-mono text-xs uppercase tracking-widest mb-2">Outcome</span>
-                  <span className="font-inter text-white text-xl font-medium leading-relaxed">{selectedProject.outcome}</span>
+                  <span className="block text-[#5A5A5A] font-mono text-xs uppercase tracking-widest mb-2">Outcome</span>
+                  <span className="font-inter text-[#1A1A1A] text-xl font-medium leading-relaxed">{selectedProject.outcome}</span>
                 </div>
               </div>
             </div>

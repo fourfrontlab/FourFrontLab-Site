@@ -17,11 +17,11 @@ export default function CustomCursor() {
     };
 
     const onMouseEnter = () => {
-      gsap.to(cursor, { scale: 2.5, backgroundColor: "transparent", border: "1px solid #8DBF00", duration: 0.3 });
+      gsap.to(cursor, { scale: 2.5, backgroundColor: "transparent", border: "1px solid #0E5C8C", duration: 0.3 });
     };
     
     const onMouseLeave = () => {
-      gsap.to(cursor, { scale: 1, backgroundColor: "#8DBF00", border: "none", duration: 0.3 });
+      gsap.to(cursor, { scale: 1, backgroundColor: "#0E5C8C", border: "none", duration: 0.3 });
     };
 
     window.addEventListener("mousemove", onMouseMove);
@@ -50,7 +50,7 @@ export default function CustomCursor() {
   return (
     <div 
       ref={cursorRef} 
-      className="fixed top-0 left-0 w-4 h-4 bg-[#8DBF00] rounded-full pointer-events-none z-[9999]"
+      className="fixed top-0 left-0 w-4 h-4 bg-[#0E5C8C] rounded-full pointer-events-none z-[9999]"
       style={{ transform: 'translate(-50%, -50%)' }}
     />
   );
