@@ -39,15 +39,26 @@ export default function Hero() {
           ))}
         </h1>
 
-        <div className="flex gap-4 items-center opacity-0 animate-[fadeIn_1s_ease-out_1s_forwards] mb-12">
-          <div className="w-16 h-[2px] bg-[#0E5C8C]" />
-          <span className="font-mono text-sm tracking-widest uppercase text-[#5A5A5A]">
-            Four Founders. Four Fronts.
-          </span>
+        <div className="flex flex-col gap-6 opacity-0 animate-[fadeIn_1s_ease-out_1s_forwards] mb-12">
+          {/* Capacity Badge */}
+          <div className="inline-flex items-center gap-2 self-start bg-white border border-[#0E5C8C]/20 px-4 py-2 rounded-full shadow-sm relative overflow-hidden group hover:border-[#0E5C8C]/50 transition-colors">
+            <div className="absolute inset-0 bg-[#0E5C8C]/5 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300"></div>
+            <div className="w-2 h-2 rounded-full bg-[#2BA9D1] animate-pulse"></div>
+            <span className="font-mono text-xs uppercase tracking-widest text-[#0E5C8C] relative z-10">
+              Currently accepting 2 new projects this quarter
+            </span>
+          </div>
+
+          <div className="flex gap-4 items-center">
+            <div className="w-16 h-[2px] bg-[#0E5C8C]" />
+            <span className="font-mono text-sm tracking-widest uppercase text-[#5A5A5A]">
+              Four Founders. Four Fronts.
+            </span>
+          </div>
         </div>
 
         <div className="opacity-0 animate-[fadeIn_1s_ease-out_1.3s_forwards]">
-          <Link href="#contact" className="inline-flex items-center gap-3 bg-[#0E5C8C] border border-[#0E5C8C] text-white px-8 py-4 rounded-sm font-medium text-lg hover:bg-[#2BA9D1] hover:border-[#2BA9D1] transition-all group">
+          <Link href="/contact" className="inline-flex items-center gap-3 bg-[#0E5C8C] border border-[#0E5C8C] text-white px-8 py-4 rounded-sm font-medium text-lg hover:bg-[#2BA9D1] hover:border-[#2BA9D1] transition-all group">
             <span>Let&apos;s Build Something</span>
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

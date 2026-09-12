@@ -6,7 +6,7 @@ const FourFronts = dynamic(() => import('@/components/FourFronts'), { ssr: true 
 const Stats = dynamic(() => import('@/components/Stats'), { ssr: true });
 const Portfolio = dynamic(() => import('@/components/Portfolio'), { ssr: true });
 const Process = dynamic(() => import('@/components/Process'), { ssr: true });
-const Founders = dynamic(() => import('@/components/Founders'), { ssr: true });
+const Testimonials = dynamic(() => import('@/components/Testimonials'), { ssr: true });
 const Contact = dynamic(() => import('@/components/Contact'), { ssr: true });
 
 export default function Home() {
@@ -15,9 +15,9 @@ export default function Home() {
       <Hero />
       <FourFronts />
       <Stats />
-      <Portfolio />
-      <Process />
-      <Founders />
+      <Portfolio teaser={true} />
+      <Process teaser={true} />
+      <Testimonials />
       <Contact />
     </main>
   );

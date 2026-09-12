@@ -11,13 +11,14 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          <Link href="#work" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Work</Link>
-          <Link href="#process" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Process</Link>
-          <Link href="#team" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Team</Link>
-          <Link href="#contact" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Contact</Link>
+          <Link href="/work" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Work</Link>
+          <Link href="/process" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Process</Link>
+          <Link href="/pricing" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Pricing</Link>
+          <Link href="/team" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Team</Link>
+          <Link href="/contact" className="text-sm font-medium text-[#5A5A5A] hover:text-[#0E5C8C] transition-colors">Contact</Link>
         </div>
 
-        <Link href="#contact" className="bg-[#0E5C8C] border border-[#0E5C8C] text-white px-5 py-2.5 rounded-sm text-sm font-medium hover:bg-[#2BA9D1] hover:border-[#2BA9D1] transition-all">
+        <Link href="/contact" className="bg-[#0E5C8C] border border-[#0E5C8C] text-white px-5 py-2.5 rounded-sm text-sm font-medium hover:bg-[#2BA9D1] hover:border-[#2BA9D1] transition-all">
           Start a Project
         </Link>
       </div>
