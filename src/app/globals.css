@@ -7,6 +7,9 @@
   --color-accent: #C6FF00;
   --color-card: #141414;
   --color-border: rgba(255, 255, 255, 0.1);
+  --font-inter: var(--font-inter), sans-serif;
+  --font-space: var(--font-space), sans-serif;
+  --font-mono: var(--font-mono), monospace;
 }
 
 @layer base {
