@@ -1,9 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #FAFAF9;
-  --color-foreground: #1A1A1A;
-  --color-accent: #8DBF00;
+  --color-background: #0A0A0A;
+  --color-foreground: #A0A0A0; /* body text */
+  --color-heading: #FFFFFF; /* headings */
+  --color-accent: #C6FF00;
+  --color-card: #141414;
+  --color-border: rgba(255, 255, 255, 0.1);
 }
 
 @layer base {
@@ -11,7 +14,10 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     overflow-x: hidden;
-    cursor: none;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-heading);
   }
 }
 
@@ -22,7 +28,15 @@
     pointer-events: none;
   }
   
-  .hide-cursor * {
-    cursor: none;
+  .section-padding {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
   }
 }
