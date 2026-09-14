@@ -1,12 +1,21 @@
 import { SEO_CONFIG } from '@/lib/seo-config';
 
 export default function sitemap() {
-  return [
-    {
-      url: SEO_CONFIG.siteUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1.0,
-    },
+  const baseUrl = SEO_CONFIG.siteUrl;
+
+  const routes = [
+    '',
+    '/contact',
+    '/pricing',
+    '/process',
+    '/team',
+    '/work',
+    '/work/hanaz-official',
+    '/work/roamease',
+    '/work/edutrack',
   ];
+
+  return routes.map((route) => ({
+    url: `${baseUrl}${route === '' ? '/' : route}`,
+  }));
 }
