@@ -1,6 +1,8 @@
 export const SEO_CONFIG = {
   // Use the production URL. To switch to a custom domain, update this single value.
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://fourfrontlab.vercel.app',
+  siteUrl: (process.env.NEXT_PUBLIC_SITE_URL && process.env.NEXT_PUBLIC_SITE_URL.includes('fourfrontlab.vercel.app')) 
+    ? 'https://www.fourfrontlab.tech' 
+    : (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.fourfrontlab.tech'),
   siteName: 'FourFrontLab',
   title: 'FourFrontLab | Software Development & Digital Solutions',
   description: 'We engineer digital experiences that perform. Scalable architecture, fluid frontend, and measured impact for web and mobile development.',
