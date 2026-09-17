@@ -68,21 +68,24 @@ export default function Portfolio({ teaser = false }) {
         }
       );
 
-      // Cards staggered animation
-      gsap.fromTo(".portfolio-card",
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          stagger: 0.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: ".portfolio-list",
-            start: "top 75%",
+      // Cards individual entrance animations
+      const cards = gsap.utils.toArray('.portfolio-card');
+      cards.forEach((card) => {
+        gsap.fromTo(card,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 80%",
+              toggleActions: "play none none none"
+            }
           }
-        }
-      );
+        );
+      });
     }, containerRef);
 
     return () => ctx.revert();

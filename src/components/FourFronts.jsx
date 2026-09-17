@@ -10,53 +10,53 @@ export default function FourFronts() {
   const scrollContainerRef = useRef(null);
 
   useEffect(() => {
-    let mm = gsap.matchMedia(sectionRef);
-    
-    mm.add("(min-width: 768px)", () => {
+    let ctx = gsap.context(() => {
       const panels = gsap.utils.toArray('.front-panel');
 
-      // Horizontal scroll pinning
-      gsap.to(panels, {
-        xPercent: -200,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          pin: true,
-          scrub: 1,
-          snap: 1,
-          end: () => "+=" + (scrollContainerRef.current.offsetWidth / 2)
-        }
-      });
-      
-      // Animate SVG paths in panels on scrub
       panels.forEach((panel) => {
+        // Entrance animation for panel
+        gsap.fromTo(panel, 
+          { opacity: 0, y: 50 },
+          { 
+            opacity: 1, 
+            y: 0, 
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: panel,
+              start: "top 75%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+
+        // Entrance animation for SVG paths
         gsap.fromTo(panel.querySelectorAll('.schematic-path'),
           { strokeDashoffset: 500, strokeDasharray: 500 },
           { 
             strokeDashoffset: 0, 
-            ease: "none",
+            duration: 1.5,
+            ease: "power2.out",
             scrollTrigger: {
               trigger: panel,
-              containerAnimation: gsap.getById("scrollTween"), // Not defined, fallback to simple scrollTrigger or let CSS handle it
-              start: "left center",
-              end: "right center",
-              scrub: true
+              start: "top 75%",
+              toggleActions: "play none none none"
             }
           }
         );
       });
-    });
+    }, sectionRef);
 
-    return () => mm.revert();
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={sectionRef} className="md:h-screen w-full overflow-hidden bg-[#FAFAF8] flex items-stretch relative border-b border-[#151515]">
+    <section ref={sectionRef} className="w-full bg-[#FAFAF8] flex items-stretch relative border-b border-[#151515]">
       
-      <div ref={scrollContainerRef} className="flex flex-col md:flex-row h-auto md:h-full w-full md:w-[200%] shrink-0 relative z-10">
+      <div ref={scrollContainerRef} className="flex flex-col w-full relative z-10">
 
         {/* Panel 1: Frontend */}
-        <div className="front-panel w-full md:w-1/4 h-auto md:h-full min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b md:border-b-0 md:border-r border-[#151515]">
+        <div className="front-panel w-full h-auto min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b border-[#151515]">
           <div className="w-full pt-8 shrink-0">
             <span className="font-mono text-[#1B3A5C] text-sm mb-4 block tracking-widest uppercase border-b border-[#1B3A5C] pb-1 w-max">FIG. 01 // FRONTEND</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-inter text-[#151515]">Pixel-perfect<br />precision.</h2>
@@ -93,7 +93,7 @@ export default function FourFronts() {
         </div>
 
         {/* Panel 2: Backend */}
-        <div className="front-panel w-full md:w-1/4 h-auto md:h-full min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b md:border-b-0 md:border-r border-[#151515]">
+        <div className="front-panel w-full h-auto min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b border-[#151515]">
           <div className="w-full pt-8 shrink-0">
             <span className="font-mono text-[#1B3A5C] text-sm mb-4 block tracking-widest uppercase border-b border-[#1B3A5C] pb-1 w-max">FIG. 02 // BACKEND</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-inter text-[#151515]">Invisible<br />power.</h2>
@@ -142,7 +142,7 @@ export default function FourFronts() {
         </div>
 
         {/* Panel 3: UX/UI */}
-        <div className="front-panel w-full md:w-1/4 h-auto md:h-full min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b md:border-b-0 md:border-r border-[#151515]">
+        <div className="front-panel w-full h-auto min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b border-[#151515]">
           <div className="w-full pt-8 shrink-0">
             <span className="font-mono text-[#1B3A5C] text-sm mb-4 block tracking-widest uppercase border-b border-[#1B3A5C] pb-1 w-max">FIG. 03 // UX &amp; UI</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-inter text-[#151515]">Logical<br />flow.</h2>
@@ -195,7 +195,7 @@ export default function FourFronts() {
         </div>
 
         {/* Panel 4: Strategy/Growth */}
-        <div className="front-panel w-full md:w-1/4 h-auto md:h-full min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8">
+        <div className="front-panel w-full h-auto min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8">
           <div className="w-full pt-8 shrink-0">
             <span className="font-mono text-[#1B3A5C] text-sm mb-4 block tracking-widest uppercase border-b border-[#1B3A5C] pb-1 w-max">FIG. 04 // STRATEGY &amp; GROWTH</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-inter text-[#151515]">Measured<br />impact.</h2>
