@@ -13,13 +13,14 @@ export default function Founders() {
     let ctx = gsap.context(() => {
       // Header animation
       gsap.fromTo(".founder-header",
-        { opacity: 0, y: 30 },
+        { opacity: 0, y: 30, willChange: "transform, opacity" },
         {
           opacity: 1,
           y: 0,
           duration: 1,
           stagger: 0.15,
           ease: "power3.out",
+          clearProps: "willChange",
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top 80%",
@@ -29,13 +30,14 @@ export default function Founders() {
 
       // Founders staggered animation
       gsap.fromTo(".founder-card",
-        { opacity: 0, y: 50 },
+        { opacity: 0, y: 50, willChange: "transform, opacity" },
         {
           opacity: 1,
           y: 0,
           duration: 1,
           stagger: 0.2,
           ease: "power3.out",
+          clearProps: "willChange",
           scrollTrigger: {
             trigger: ".founders-grid",
             start: "top 75%",

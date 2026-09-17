@@ -11,39 +11,33 @@ export default function FourFronts() {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      const panels = gsap.utils.toArray('.front-panel');
+      ScrollTrigger.batch(".front-panel", {
+        start: "top 75%",
+        onEnter: (batch) => {
+          batch.forEach((panel, i) => {
+            gsap.fromTo(panel, 
+              { opacity: 0, y: 50, willChange: "transform, opacity" },
+              { 
+                opacity: 1, 
+                y: 0, 
+                duration: 0.8,
+                ease: "power3.out",
+                delay: i * 0.15,
+                clearProps: "willChange"
+              }
+            );
 
-      panels.forEach((panel) => {
-        // Entrance animation for panel
-        gsap.fromTo(panel, 
-          { opacity: 0, y: 50 },
-          { 
-            opacity: 1, 
-            y: 0, 
-            duration: 0.8,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: panel,
-              start: "top 75%",
-              toggleActions: "play none none none"
-            }
-          }
-        );
-
-        // Entrance animation for SVG paths
-        gsap.fromTo(panel.querySelectorAll('.schematic-path'),
-          { strokeDashoffset: 500, strokeDasharray: 500 },
-          { 
-            strokeDashoffset: 0, 
-            duration: 1.5,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: panel,
-              start: "top 75%",
-              toggleActions: "play none none none"
-            }
-          }
-        );
+            gsap.fromTo(panel.querySelectorAll('.schematic-path'),
+              { strokeDashoffset: 500, strokeDasharray: 500 },
+              { 
+                strokeDashoffset: 0, 
+                duration: 1.5,
+                ease: "power2.out",
+                delay: i * 0.15
+              }
+            );
+          });
+        }
       });
     }, sectionRef);
 

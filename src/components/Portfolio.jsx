@@ -55,12 +55,13 @@ export default function Portfolio({ teaser = false }) {
     let ctx = gsap.context(() => {
       // Header animation
       gsap.fromTo(".portfolio-header",
-        { opacity: 0, y: 30 },
+        { opacity: 0, y: 30, willChange: "transform, opacity" },
         {
           opacity: 1,
           y: 0,
           duration: 1,
           ease: "power3.out",
+          clearProps: "willChange",
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top 80%",
@@ -68,24 +69,23 @@ export default function Portfolio({ teaser = false }) {
         }
       );
 
-      // Cards individual entrance animations
-      const cards = gsap.utils.toArray('.portfolio-card');
-      cards.forEach((card) => {
-        gsap.fromTo(card,
-          { opacity: 0, y: 50 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: card,
-              start: "top 80%",
-              toggleActions: "play none none none"
-            }
+      // Cards batch entrance animations
+      gsap.fromTo('.portfolio-card',
+        { opacity: 0, y: 50, willChange: "transform, opacity" },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          stagger: 0.15,
+          ease: "power3.out",
+          clearProps: "willChange",
+          scrollTrigger: {
+            trigger: ".portfolio-list",
+            start: "top 80%",
+            toggleActions: "play none none none"
           }
-        );
-      });
+        }
+      );
     }, containerRef);
 
     return () => ctx.revert();
@@ -111,7 +111,7 @@ export default function Portfolio({ teaser = false }) {
 
         <div className="portfolio-list flex flex-col gap-16 lg:gap-24">
           {projects.map((project, i) => (
-            <div key={i} className="portfolio-card w-full" style={{ contentVisibility: 'auto' }}>
+            <div key={i} className="portfolio-card w-full">
               <Link
                 href={`/work/${project.slug}`}
                 className="corner-ticks group relative w-full flex flex-col lg:flex-row gap-8 lg:gap-16 border border-[#151515] bg-[#FAFAF8] p-6 lg:p-10 hover:border-[#1B3A5C] hover:-translate-y-1 transition-transform transition-colors duration-500 shadow-sm"
@@ -129,6 +129,8 @@ export default function Portfolio({ teaser = false }) {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     placeholder="blur"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-white/20 group-hover:bg-transparent transition-colors duration-500" />
                   {/* Blue overlay on hover */}
