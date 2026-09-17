@@ -1,6 +1,5 @@
 'use client';
 import { useState, useCallback, memo } from 'react';
-import gsap from 'gsap';
 
 const faqs = [
   {
@@ -28,23 +27,23 @@ const faqs = [
 const FAQItem = memo(({ faq, index, isActive, onToggle }) => {
   return (
     <div 
-      className={`border rounded-sm overflow-hidden transition-colors duration-300 ${isActive ? 'border-[#0E5C8C] bg-white' : 'border-[#E0E2E5] bg-[#F0F1F3]'}`}
+      className={`border rounded-none overflow-hidden transition-colors duration-300 ${isActive ? 'border-[#151515] bg-[#151515]/5' : 'border-[#151515] bg-[#FAFAF8] hover:bg-[#151515]/5'}`}
     >
       <button
         className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none"
         onClick={() => onToggle(index)}
       >
-        <span className={`font-inter font-medium text-lg ${isActive ? 'text-[#0E5C8C]' : 'text-[#1A1A1A]'}`}>
+        <span className={`font-inter font-bold text-lg ${isActive ? 'text-[#1B3A5C]' : 'text-[#151515]'}`}>
           {faq.question}
         </span>
-        <span className={`text-xl transition-transform duration-300 ${isActive ? 'rotate-180 text-[#0E5C8C]' : 'text-[#5A5A5A]'}`}>
+        <span className={`font-mono text-xl transition-transform duration-300 ${isActive ? 'rotate-180 text-[#1B3A5C]' : 'text-[#5C5C5C]'}`}>
           ↓
         </span>
       </button>
       <div 
         className={`px-6 overflow-hidden transition-all duration-500 ease-in-out ${isActive ? 'max-h-40 pb-4 opacity-100' : 'max-h-0 opacity-0'}`}
       >
-        <p className="text-[#5A5A5A] font-light font-inter text-base">
+        <p className="text-[#5C5C5C] font-medium font-inter text-base border-t border-[#151515]/20 pt-4">
           {faq.answer}
         </p>
       </div>
@@ -62,8 +61,9 @@ export default function FAQ() {
   }, []);
 
   return (
-    <div className="max-w-3xl mx-auto w-full">
-      <h2 className="text-3xl md:text-5xl font-bold font-space text-[#1A1A1A] tracking-tight mb-8">
+    <div className="max-w-3xl mx-auto w-full py-24 px-6 md:px-0">
+      <span className="font-mono text-[#1B3A5C] text-sm mb-4 block tracking-widest uppercase">SEC. 08 // FAQ</span>
+      <h2 className="text-3xl md:text-5xl font-bold font-inter text-[#151515] tracking-tight mb-8">
         Frequently Asked Questions
       </h2>
       <div className="flex flex-col gap-4">

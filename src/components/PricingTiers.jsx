@@ -1,6 +1,5 @@
 'use client';
 import Link from 'next/link';
-import { Check } from 'lucide-react';
 import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -74,13 +73,14 @@ export default function PricingTiers() {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-24 px-6 md:px-12 bg-[#F0F1F3]">
+    <section ref={containerRef} className="py-24 px-6 md:px-12 bg-[#FAFAF8]">
       <div className="max-w-[1400px] mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-7xl font-bold font-space text-[#1A1A1A] tracking-tight mb-6">
+        <div className="text-center mb-16 relative">
+          <span className="font-mono text-[#1B3A5C] text-sm mb-4 block tracking-widest uppercase">SEC. 06 // PACKAGES</span>
+          <h2 className="text-5xl md:text-7xl font-bold font-inter text-[#151515] tracking-tight mb-6">
             Simple, scalable engagements.
           </h2>
-          <p className="text-[#5A5A5A] text-xl font-inter max-w-2xl mx-auto">
+          <p className="text-[#5C5C5C] text-xl font-medium max-w-2xl mx-auto">
             Choose the tier that fits your project's scope. We'll work with you to define the exact requirements and provide a transparent quote.
           </p>
         </div>
@@ -89,34 +89,36 @@ export default function PricingTiers() {
           {tiers.map((tier, i) => (
             <div 
               key={i} 
-              className={`tier-card flex flex-col p-8 rounded-sm border ${tier.highlighted ? 'border-[#0E5C8C] bg-white shadow-lg relative transform md:-translate-y-4' : 'border-[#E0E2E5] bg-[#FAFAFA] hover:border-[#0E5C8C]/30'}`}
+              className={`tier-card flex flex-col p-8 rounded-none border ${tier.highlighted ? 'border-[#151515] bg-[#FAFAF8] relative transform md:-translate-y-4 corner-ticks shadow-[4px_4px_0_0_#1B3A5C]' : 'border-[#151515] bg-[#FAFAF8] hover:border-[#1B3A5C] transition-colors'}`}
             >
               {tier.highlighted && (
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#0E5C8C] text-white px-4 py-1 text-xs font-mono uppercase tracking-widest rounded-sm">
-                  Most Popular
+                <div className="absolute -top-[12px] left-1/2 transform -translate-x-1/2 bg-[#151515] text-[#FAFAF8] px-4 py-1 text-xs font-mono uppercase tracking-widest rounded-none border border-[#151515]">
+                  RECOMMENDED
                 </div>
               )}
-              <h3 className="text-3xl font-space font-bold text-[#1A1A1A] mb-2">{tier.name}</h3>
-              <p className="text-[#5A5A5A] text-sm mb-6 h-10">{tier.description}</p>
+              <h3 className="text-3xl font-inter font-bold text-[#151515] mb-2 dimension-line pb-2">{tier.name}</h3>
+              <p className="text-[#5C5C5C] text-sm mb-6 h-10 mt-4">{tier.description}</p>
               
-              <div className="mb-8">
-                <span className="text-4xl font-bold text-[#1A1A1A] tracking-tighter">{tier.price}</span>
+              <div className="mb-8 border-t border-[#151515] pt-4">
+                <span className="text-3xl font-bold text-[#151515] tracking-tighter">{tier.price}</span>
               </div>
               
               <Link 
                 href="/contact" 
-                className={`w-full py-3 text-center rounded-sm font-medium transition-all mb-8 ${tier.highlighted ? 'bg-[#0E5C8C] text-white hover:bg-[#2BA9D1]' : 'bg-transparent border border-[#0E5C8C] text-[#0E5C8C] hover:bg-[#0E5C8C] hover:text-white'}`}
+                className={`w-full py-3 text-center rounded-none font-mono font-bold tracking-widest uppercase text-sm transition-all mb-8 ${tier.highlighted ? 'bg-[#151515] text-white hover:bg-[#1B3A5C]' : 'bg-transparent border border-[#151515] text-[#151515] hover:bg-[#151515] hover:text-white'}`}
               >
                 Get Started
               </Link>
 
               <div className="flex-grow">
-                <span className="block text-xs font-mono text-[#5A5A5A] uppercase tracking-widest mb-4">Includes:</span>
+                <span className="block text-xs font-mono text-[#151515] uppercase tracking-widest mb-4 border-b border-[#151515] pb-2">Includes:</span>
                 <ul className="flex flex-col gap-3">
                   {tier.features.map((feature, j) => (
                     <li key={j} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-[#2BA9D1] shrink-0" />
-                      <span className="text-[#1A1A1A] text-sm">{feature}</span>
+                      <svg className="w-5 h-5 text-[#1B3A5C] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-[#151515] text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>

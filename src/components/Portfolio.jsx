@@ -78,26 +78,36 @@ export default function Portfolio({ teaser = false }) {
   }, []);
 
   return (
-    <section ref={containerRef} className="section-padding px-6 lg:px-12 bg-[#F0F1F3] border-b border-[#E0E2E5]" id="work">
+    <section ref={containerRef} className="section-padding px-6 lg:px-12 bg-[#FAFAF8] border-b border-[#151515]" id="work">
       <div className="max-w-[1400px] mx-auto">
-        <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <h2 className="portfolio-header text-5xl lg:text-7xl font-bold tracking-tighter leading-none font-space text-[#1A1A1A]">Deployments</h2>
+        <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#151515] pb-6 relative">
+          <div className="absolute left-0 bottom-[-4px] w-[1px] h-[7px] bg-[#151515]"></div>
+          <div className="absolute right-0 bottom-[-4px] w-[1px] h-[7px] bg-[#151515]"></div>
+          
+          <div>
+            <span className="font-mono text-[#1B3A5C] text-sm mb-4 block tracking-widest uppercase">SEC. 03 // OUTPUT</span>
+            <h2 className="portfolio-header text-5xl lg:text-7xl font-bold tracking-tighter leading-none font-inter text-[#151515]">Deployments</h2>
+          </div>
           {teaser && (
-            <Link href="/work" className="portfolio-header inline-flex items-center gap-2 text-[#0E5C8C] hover:text-[#2BA9D1] font-medium transition-colors border-b border-transparent hover:border-[#2BA9D1]">
+            <Link href="/work" className="portfolio-header inline-flex items-center gap-2 text-[#1B3A5C] hover:text-[#D14E1F] font-mono text-sm uppercase tracking-widest transition-colors dimension-line pb-1">
               View All Work <ArrowUpRight className="w-4 h-4" />
             </Link>
           )}
         </div>
 
         <div className="flex flex-col gap-16 lg:gap-24">
-          {(teaser ? projects.slice(0, 2) : projects).map((project, i) => (
+          {projects.map((project, i) => (
             <Link
               key={i}
               href={`/work/${project.slug}`}
-              className="portfolio-card group relative w-full flex flex-col lg:flex-row gap-8 lg:gap-16 border border-[#E0E2E5] bg-[#FAFAFA] p-6 lg:p-10 rounded-sm hover:border-[#0E5C8C]/40 hover:-translate-y-1 transition-all duration-500 shadow-sm"
+              className="portfolio-card corner-ticks group relative w-full flex flex-col lg:flex-row gap-8 lg:gap-16 border border-[#151515] bg-[#FAFAF8] p-6 lg:p-10 hover:border-[#1B3A5C] hover:-translate-y-1 transition-all duration-500 shadow-sm"
             >
+              <div className="absolute top-0 right-0 border-l border-b border-[#151515] px-4 py-1 bg-[#FAFAF8] z-10 group-hover:border-[#1B3A5C] transition-colors">
+                <span className="font-mono text-xs text-[#151515] tracking-widest">PROJECT &mdash; 0{i + 1}</span>
+              </div>
+
               {/* Image / Mockup Area */}
-              <div className="w-full lg:w-1/2 overflow-hidden rounded-sm relative aspect-[4/3] bg-[#E8EAF0] border border-[#E0E2E5] group-hover:border-[#0E5C8C]/30 transition-colors">
+              <div className="w-full lg:w-1/2 overflow-hidden relative aspect-[4/3] bg-[#E5E5E0] border border-[#151515] group-hover:border-[#1B3A5C] transition-colors">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -107,33 +117,38 @@ export default function Portfolio({ teaser = false }) {
                 />
                 <div className="absolute inset-0 bg-white/20 group-hover:bg-transparent transition-colors duration-500" />
                 {/* Blue overlay on hover */}
-                <div className="absolute inset-0 bg-[#0E5C8C]/05 opacity-0 group-hover:opacity-100 mix-blend-multiply transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute inset-0 bg-[#1B3A5C]/10 opacity-0 group-hover:opacity-100 mix-blend-multiply transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute top-2 left-2 w-2 h-2 border border-[#151515] group-hover:border-[#1B3A5C] bg-[#FAFAF8] z-10"></div>
+                <div className="absolute top-2 right-2 w-2 h-2 border border-[#151515] group-hover:border-[#1B3A5C] bg-[#FAFAF8] z-10"></div>
+                <div className="absolute bottom-2 left-2 w-2 h-2 border border-[#151515] group-hover:border-[#1B3A5C] bg-[#FAFAF8] z-10"></div>
+                <div className="absolute bottom-2 right-2 w-2 h-2 border border-[#151515] group-hover:border-[#1B3A5C] bg-[#FAFAF8] z-10"></div>
               </div>
 
               {/* Content Area */}
-              <div className="w-full lg:w-1/2 flex flex-col justify-center">
+              <div className="w-full lg:w-1/2 flex flex-col justify-center pt-4 lg:pt-0">
                 <div className="flex justify-between items-start mb-6">
-                  <span className="font-mono text-[#0E5C8C] text-xs uppercase tracking-widest bg-[#0E5C8C]/8 px-4 py-2 rounded-sm border border-[#0E5C8C]/20 group-hover:border-[#0E5C8C]/40 transition-colors">
+                  <span className="font-mono text-[#1B3A5C] text-xs uppercase tracking-widest border-b border-[#1B3A5C] pb-1">
                     {project.client}
                   </span>
-                  <div className="w-12 h-12 rounded-full bg-[#0E5C8C]/8 text-[#0E5C8C] flex items-center justify-center group-hover:bg-[#0E5C8C] group-hover:text-white transition-colors duration-300 border border-[#0E5C8C]/20">
+                  <div className="w-10 h-10 border border-[#151515] text-[#151515] flex items-center justify-center group-hover:bg-[#1B3A5C] group-hover:text-white group-hover:border-[#1B3A5C] transition-colors duration-300">
                     <ArrowUpRight className="w-5 h-5" />
                   </div>
                 </div>
 
-                <h3 className="text-4xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-space text-[#1A1A1A] group-hover:text-[#0E5C8C] transition-colors">{project.title}</h3>
+                <h3 className="text-4xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-inter text-[#151515] group-hover:text-[#1B3A5C] transition-colors">{project.title}</h3>
 
                 <div className="flex flex-wrap gap-2 mb-8">
                   {project.stack.map((tech, j) => (
-                    <span key={j} className="text-xs font-mono text-[#5A5A5A] bg-[#E8EAF0] px-3 py-1.5 rounded-sm border border-[#E0E2E5]">
+                    <span key={j} className="text-xs font-mono text-[#151515] border border-[#151515] px-3 py-1.5 bg-[#FAFAF8]">
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="mt-auto pt-6 border-t border-[#E0E2E5] group-hover:border-[#0E5C8C]/20 transition-colors">
-                  <span className="block text-[#5A5A5A] font-mono text-xs uppercase mb-2 tracking-widest">Outcome</span>
-                  <span className="font-inter text-[#1A1A1A] text-lg lg:text-xl font-light leading-relaxed">{project.outcome}</span>
+                <div className="mt-auto pt-6 border-t border-[#151515] group-hover:border-[#1B3A5C] transition-colors relative">
+                  <div className="absolute top-[-4px] left-0 w-[1px] h-[7px] bg-[#151515] group-hover:bg-[#1B3A5C] transition-colors"></div>
+                  <span className="block text-[#5C5C5C] font-mono text-xs uppercase mb-2 tracking-widest">Outcome</span>
+                  <span className="font-inter text-[#151515] text-lg lg:text-xl font-medium leading-relaxed">{project.outcome}</span>
                 </div>
               </div>
             </Link>
