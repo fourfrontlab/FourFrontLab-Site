@@ -1,40 +1,14 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const technologies = [
   "React", "Next.js", "Node.js", "PostgreSQL", "Supabase", "Tailwind CSS", "AWS", "GSAP", "TypeScript", "Redis"
 ];
 
 export default function TechStack() {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.fromTo(".tech-item",
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.05,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 85%",
-          }
-        }
-      );
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
-    <section ref={containerRef} className="py-16 px-6 md:px-12 bg-[#FAFAF8] border-b border-[#151515] overflow-hidden">
+    <section className="py-16 px-6 md:px-12 bg-[#FAFAF8] border-b border-[#151515] overflow-hidden">
       <div className="max-w-[1400px] mx-auto flex flex-col items-center">
         <span className="font-mono text-[#5C5C5C] text-xs mb-8 block tracking-widest uppercase text-center border-b border-[#151515] pb-1 w-max">
           Technologies We Use

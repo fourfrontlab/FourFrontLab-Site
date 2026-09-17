@@ -1,11 +1,8 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const steps = [
   {
@@ -31,51 +28,10 @@ const steps = [
 ];
 
 export default function Process({ teaser = false }) {
-  const containerRef = useRef(null);
   const displaySteps = teaser ? steps.slice(0, 2) : steps;
 
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      // Header animation
-      gsap.fromTo(".process-header", 
-        { opacity: 0, y: 30 },
-        { 
-          opacity: 1, 
-          y: 0, 
-          duration: 1, 
-          stagger: 0.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%",
-          }
-        }
-      );
-
-      // Steps animation
-      const stepElements = gsap.utils.toArray('.process-step');
-      stepElements.forEach((step, i) => {
-        gsap.fromTo(step, 
-          { opacity: 0, y: 50 },
-          { 
-            opacity: 1, 
-            y: 0, 
-            duration: 1, 
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: step,
-              start: "top 85%",
-            }
-          }
-        );
-      });
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, [teaser]);
-
   return (
-    <section className="section-padding px-6 lg:px-12 bg-[#FAFAF8] border-b border-[#151515] relative" ref={containerRef} id="process">
+    <section className="section-padding px-6 lg:px-12 bg-[#FAFAF8] border-b border-[#151515] relative" id="process">
       
       <div className="max-w-[1400px] mx-auto relative z-10">
         <div className="mb-24 flex flex-col md:flex-row justify-between items-start md:items-end border-b border-[#151515] pb-12 gap-6 relative">

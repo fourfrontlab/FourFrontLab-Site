@@ -1,41 +1,9 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Stats() {
-  const sectionRef = useRef(null);
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      const counters = gsap.utils.toArray('.stat-counter');
-      counters.forEach((counter) => {
-        if (!counter) return;
-        const target = parseFloat(counter.getAttribute('data-target'));
-        if (isNaN(target)) return;
-        
-        const obj = { val: 0 };
-        gsap.to(obj, {
-          val: target,
-          duration: 2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
-          },
-          onUpdate: () => {
-            counter.textContent = Math.floor(obj.val);
-          }
-        });
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={sectionRef} className="section-padding px-6 md:px-12 bg-[#FAFAF8] border-b border-[#151515] relative overflow-hidden">
+    <section className="section-padding px-6 md:px-12 bg-[#FAFAF8] border-b border-[#151515] relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto relative z-10 flex flex-col md:flex-row gap-16 md:gap-8 items-start md:items-center justify-between">
         
         <div className="md:w-1/3">

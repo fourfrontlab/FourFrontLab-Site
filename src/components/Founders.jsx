@@ -1,56 +1,11 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Founders() {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      // Header animation
-      gsap.fromTo(".founder-header",
-        { opacity: 0, y: 30, willChange: "transform, opacity" },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          stagger: 0.15,
-          ease: "power3.out",
-          clearProps: "willChange",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%",
-          }
-        }
-      );
-
-      // Founders staggered animation
-      gsap.fromTo(".founder-card",
-        { opacity: 0, y: 50, willChange: "transform, opacity" },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          stagger: 0.2,
-          ease: "power3.out",
-          clearProps: "willChange",
-          scrollTrigger: {
-            trigger: ".founders-grid",
-            start: "top 75%",
-          }
-        }
-      );
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
-    <section className="section-padding px-6 lg:px-12 bg-[#FAFAF8] border-b border-[#151515] overflow-hidden" id="team" ref={containerRef}>
+    <section className="section-padding px-6 lg:px-12 bg-[#FAFAF8] border-b border-[#151515] overflow-hidden" id="team">
       <div className="max-w-[1400px] mx-auto">
         <div className="mb-24 max-w-3xl">
           <span className="font-mono text-[#1B3A5C] text-sm mb-4 block tracking-widest uppercase border-b border-[#1B3A5C] pb-1 w-max">SEC. 05 // TEAM</span>

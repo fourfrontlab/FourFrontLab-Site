@@ -1,53 +1,12 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function FourFronts() {
-  const sectionRef = useRef(null);
-  const scrollContainerRef = useRef(null);
-
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      ScrollTrigger.batch(".front-panel", {
-        start: "top 75%",
-        onEnter: (batch) => {
-          batch.forEach((panel, i) => {
-            gsap.fromTo(panel, 
-              { opacity: 0, y: 50, willChange: "transform, opacity" },
-              { 
-                opacity: 1, 
-                y: 0, 
-                duration: 0.8,
-                ease: "power3.out",
-                delay: i * 0.15,
-                clearProps: "willChange"
-              }
-            );
-
-            gsap.fromTo(panel.querySelectorAll('.schematic-path'),
-              { strokeDashoffset: 500, strokeDasharray: 500 },
-              { 
-                strokeDashoffset: 0, 
-                duration: 1.5,
-                ease: "power2.out",
-                delay: i * 0.15
-              }
-            );
-          });
-        }
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-[#FAFAF8] flex items-stretch relative border-b border-[#151515]">
+    <section className="w-full bg-[#FAFAF8] flex items-stretch relative border-b border-[#151515]">
       
-      <div ref={scrollContainerRef} className="flex flex-col w-full relative z-10">
+      <div className="flex flex-col w-full relative z-10">
 
         {/* Panel 1: Frontend */}
         <div className="front-panel w-full h-auto flex flex-col justify-between py-12 md:py-20 px-8 md:px-12 relative gap-12 border-b border-[#151515]">

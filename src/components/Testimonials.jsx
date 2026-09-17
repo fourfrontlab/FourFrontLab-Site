@@ -1,9 +1,5 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const testimonials = [
   {
@@ -24,31 +20,9 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.fromTo('.testimonial-card', 
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1, 
-          y: 0,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%",
-          }
-        }
-      );
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
-    <section ref={containerRef} className="section-padding px-6 md:px-12 bg-[#FAFAF8] border-b border-[#151515]">
+    <section className="section-padding px-6 md:px-12 bg-[#FAFAF8] border-b border-[#151515]">
       <div className="max-w-[1400px] mx-auto">
         <div className="mb-16">
           <span className="font-mono text-[#1B3A5C] text-sm mb-4 block tracking-widest uppercase">SEC. 07 // CLIENTS</span>

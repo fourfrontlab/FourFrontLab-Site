@@ -1,35 +1,9 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
-  const containerRef = useRef(null);
   const [formState, setFormState] = useState('idle');
-
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.fromTo(".contact-element", 
-        { opacity: 0, y: 30 },
-        { 
-          opacity: 1, 
-          y: 0, 
-          duration: 1, 
-          stagger: 0.15,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%",
-          }
-        }
-      );
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,7 +12,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="section-padding px-6 lg:px-12 bg-[#FAFAF8] border-b border-[#151515] relative overflow-hidden" id="contact" ref={containerRef}>
+    <section className="section-padding px-6 lg:px-12 bg-[#FAFAF8] border-b border-[#151515] relative overflow-hidden" id="contact">
       
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
         

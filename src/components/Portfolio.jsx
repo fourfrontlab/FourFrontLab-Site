@@ -3,10 +3,6 @@ import { useEffect, useRef } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 import hanazImg from '../../public/projects/hanaz_main.webp';
 import roameaseImg from '../../public/projects/roamease_main.webp';
@@ -49,50 +45,8 @@ const projects = [
 ];
 
 export default function Portfolio({ teaser = false }) {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      // Header animation
-      gsap.fromTo(".portfolio-header",
-        { opacity: 0, y: 30, willChange: "transform, opacity" },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          clearProps: "willChange",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%",
-          }
-        }
-      );
-
-      // Cards batch entrance animations
-      gsap.fromTo('.portfolio-card',
-        { opacity: 0, y: 50, willChange: "transform, opacity" },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          stagger: 0.15,
-          ease: "power3.out",
-          clearProps: "willChange",
-          scrollTrigger: {
-            trigger: ".portfolio-list",
-            start: "top 80%",
-            toggleActions: "play none none none"
-          }
-        }
-      );
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={containerRef} className="section-padding px-6 lg:px-12 bg-[#FAFAF8] border-b border-[#151515]" id="work">
+    <section className="section-padding px-6 lg:px-12 bg-[#FAFAF8] border-b border-[#151515]" id="work">
       <div className="max-w-[1400px] mx-auto">
         <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#151515] pb-6 relative">
           <div className="absolute left-0 bottom-[-4px] w-[1px] h-[7px] bg-[#151515]"></div>

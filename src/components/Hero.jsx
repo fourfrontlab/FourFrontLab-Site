@@ -1,33 +1,14 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
 import Link from 'next/link';
 
 export default function Hero() {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      // SVG path line drawing animation
-      gsap.fromTo(".schematic-path",
-        { strokeDashoffset: 1000, strokeDasharray: 1000 },
-        { strokeDashoffset: 0, duration: 2, ease: "power2.out", stagger: 0.1, delay: 0.5 }
-      );
-      
-      gsap.fromTo(".schematic-label",
-        { opacity: 0 },
-        { opacity: 1, duration: 1, ease: "power2.out", stagger: 0.1, delay: 1.5 }
-      );
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
 
   const headline = "We engineer digital experiences that perform.";
   const words = headline.split(' ');
 
   return (
-    <section ref={containerRef} className="min-h-[90vh] flex flex-col justify-center px-6 md:px-12 relative overflow-hidden bg-[#FAFAF8] border-b border-[#151515]">
+    <section className="min-h-[90vh] flex flex-col justify-center px-6 md:px-12 relative overflow-hidden bg-[#FAFAF8] border-b border-[#151515]">
       <div className="max-w-[1400px] w-full mx-auto relative z-10 pt-20 flex flex-col lg:flex-row items-center gap-12">
         <div className="w-full lg:w-3/5">
           <div className="mb-6 font-mono text-[#1B3A5C] text-sm tracking-widest uppercase flex items-center gap-4">

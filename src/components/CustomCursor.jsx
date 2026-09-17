@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
 
 export default function CustomCursor() {
   const cursorRef = useRef(null);
@@ -8,20 +7,30 @@ export default function CustomCursor() {
   useEffect(() => {
     const cursor = cursorRef.current;
     
-    const xTo = gsap.quickTo(cursor, "x", { duration: 0.15, ease: "power3" });
-    const yTo = gsap.quickTo(cursor, "y", { duration: 0.15, ease: "power3" });
-    
     const onMouseMove = (e) => {
-      xTo(e.clientX);
-      yTo(e.clientY);
+      if (cursor) {
+        // Use requestAnimationFrame for smooth native performance
+        requestAnimationFrame(() => {
+          cursor.style.left = `${e.clientX}px`;
+          cursor.style.top = `${e.clientY}px`;
+        });
+      }
     };
 
     const onMouseEnter = () => {
-      gsap.to(cursor, { scale: 2.5, backgroundColor: "transparent", border: "1px solid #0E5C8C", duration: 0.3 });
+      if (cursor) {
+        cursor.style.transform = "translate(-50%, -50%) scale(2.5)";
+        cursor.style.backgroundColor = "transparent";
+        cursor.style.border = "1px solid #0E5C8C";
+      }
     };
     
     const onMouseLeave = () => {
-      gsap.to(cursor, { scale: 1, backgroundColor: "#0E5C8C", border: "none", duration: 0.3 });
+      if (cursor) {
+        cursor.style.transform = "translate(-50%, -50%) scale(1)";
+        cursor.style.backgroundColor = "#0E5C8C";
+        cursor.style.border = "none";
+      }
     };
 
     window.addEventListener("mousemove", onMouseMove);
@@ -50,8 +59,8 @@ export default function CustomCursor() {
   return (
     <div 
       ref={cursorRef} 
-      className="fixed top-0 left-0 w-4 h-4 bg-[#0E5C8C] rounded-full pointer-events-none z-[9999]"
-      style={{ transform: 'translate(-50%, -50%)' }}
+      className="fixed top-0 left-0 w-4 h-4 bg-[#0E5C8C] rounded-full pointer-events-none z-[9999] transition-[transform,background-color,border] duration-300 ease-out"
+      style={{ transform: 'translate(-50%, -50%) scale(1)' }}
     />
   );
 }

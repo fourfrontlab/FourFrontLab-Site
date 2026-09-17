@@ -1,10 +1,5 @@
 'use client';
 import Link from 'next/link';
-import gsap from 'gsap';
-import { useEffect, useRef } from 'react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const tiers = [
   {
@@ -49,31 +44,9 @@ const tiers = [
 ];
 
 export default function PricingTiers() {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.fromTo('.tier-card', 
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1, 
-          y: 0,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%",
-          }
-        }
-      );
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
-    <section ref={containerRef} className="py-24 px-6 md:px-12 bg-[#FAFAF8]">
+    <section className="py-24 px-6 md:px-12 bg-[#FAFAF8]">
       <div className="max-w-[1400px] mx-auto">
         <div className="text-center mb-16 relative">
           <span className="font-mono text-[#1B3A5C] text-sm mb-4 block tracking-widest uppercase">SEC. 06 // PACKAGES</span>

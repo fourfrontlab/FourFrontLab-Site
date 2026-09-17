@@ -1,6 +1,5 @@
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import LenisProvider from "@/components/LenisProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -68,9 +67,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="min-h-screen bg-[#FAFAF8] text-[#5C5C5C] selection:bg-[#1B3A5C] selection:text-white font-inter blueprint-grid" suppressHydrationWarning={true}>
         <Navbar />
-        <LenisProvider>
-          {children}
-        </LenisProvider>
+        {children}
         <Footer />
       </body>
     </html>
