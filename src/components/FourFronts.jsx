@@ -56,7 +56,7 @@ export default function FourFronts() {
       <div ref={scrollContainerRef} className="flex flex-col md:flex-row h-auto md:h-full w-full md:w-[200%] shrink-0 relative z-10">
 
         {/* Panel 1: Frontend */}
-        <div className="front-panel w-full md:w-1/4 h-auto md:h-full min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b md:border-b-0 md:border-r border-[#151515] will-change-transform">
+        <div className="front-panel w-full md:w-1/4 h-auto md:h-full min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b md:border-b-0 md:border-r border-[#151515]">
           <div className="w-full pt-8 shrink-0">
             <span className="font-mono text-[#1B3A5C] text-sm mb-4 block tracking-widest uppercase border-b border-[#1B3A5C] pb-1 w-max">FIG. 01 // FRONTEND</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-inter text-[#151515]">Pixel-perfect<br />precision.</h2>
@@ -93,7 +93,7 @@ export default function FourFronts() {
         </div>
 
         {/* Panel 2: Backend */}
-        <div className="front-panel w-full md:w-1/4 h-auto md:h-full min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b md:border-b-0 md:border-r border-[#151515] will-change-transform">
+        <div className="front-panel w-full md:w-1/4 h-auto md:h-full min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b md:border-b-0 md:border-r border-[#151515]">
           <div className="w-full pt-8 shrink-0">
             <span className="font-mono text-[#1B3A5C] text-sm mb-4 block tracking-widest uppercase border-b border-[#1B3A5C] pb-1 w-max">FIG. 02 // BACKEND</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-inter text-[#151515]">Invisible<br />power.</h2>
@@ -142,7 +142,7 @@ export default function FourFronts() {
         </div>
 
         {/* Panel 3: UX/UI */}
-        <div className="front-panel w-full md:w-1/4 h-auto md:h-full min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b md:border-b-0 md:border-r border-[#151515] will-change-transform">
+        <div className="front-panel w-full md:w-1/4 h-auto md:h-full min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b md:border-b-0 md:border-r border-[#151515]">
           <div className="w-full pt-8 shrink-0">
             <span className="font-mono text-[#1B3A5C] text-sm mb-4 block tracking-widest uppercase border-b border-[#1B3A5C] pb-1 w-max">FIG. 03 // UX &amp; UI</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-inter text-[#151515]">Logical<br />flow.</h2>
@@ -195,7 +195,7 @@ export default function FourFronts() {
         </div>
 
         {/* Panel 4: Strategy/Growth */}
-        <div className="front-panel w-full md:w-1/4 h-auto md:h-full min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 will-change-transform">
+        <div className="front-panel w-full md:w-1/4 h-auto md:h-full min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8">
           <div className="w-full pt-8 shrink-0">
             <span className="font-mono text-[#1B3A5C] text-sm mb-4 block tracking-widest uppercase border-b border-[#1B3A5C] pb-1 w-max">FIG. 04 // STRATEGY &amp; GROWTH</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-inter text-[#151515]">Measured<br />impact.</h2>
