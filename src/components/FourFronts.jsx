@@ -10,39 +10,37 @@ export default function FourFronts() {
   const scrollContainerRef = useRef(null);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
-      let mm = gsap.matchMedia();
-      
-      mm.add("(min-width: 768px)", () => {
-        const panels = gsap.utils.toArray('.front-panel');
+    let mm = gsap.matchMedia(sectionRef);
+    
+    mm.add("(min-width: 768px)", () => {
+      const panels = gsap.utils.toArray('.front-panel');
 
-        // Horizontal scroll pinning
-        gsap.to(panels, {
-          xPercent: -200,
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            pin: true,
-            scrub: 1,
-            snap: 1,
-            end: () => "+=" + (scrollContainerRef.current.offsetWidth / 2)
-          }
-        });
+      // Horizontal scroll pinning
+      gsap.to(panels, {
+        xPercent: -200,
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          pin: true,
+          scrub: 1,
+          snap: 1,
+          end: () => "+=" + (scrollContainerRef.current.offsetWidth / 2)
+        }
       });
-    }, sectionRef);
+    });
 
-    return () => ctx.revert();
+    return () => mm.revert();
   }, []);
 
   return (
     <section ref={sectionRef} className="md:h-screen w-full overflow-hidden bg-[#F0F1F3] flex items-stretch relative border-b border-[#E0E2E5]">
       {/* Background Accent */}
-      <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-[#2BA9D1] rounded-full blur-[200px] opacity-[0.05] pointer-events-none -translate-x-1/2 -translate-y-1/2 z-0" />
+      <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(43,169,209,0.05)_0%,transparent_70%)] pointer-events-none -translate-x-1/2 -translate-y-1/2 z-0" />
 
       <div ref={scrollContainerRef} className="flex flex-col md:flex-row h-auto md:h-full w-full md:w-[200%] shrink-0 relative z-10">
 
         {/* Panel 1: Frontend */}
-        <div className="front-panel w-full md:w-1/4 h-auto md:h-full min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b md:border-b-0 md:border-r border-[#E0E2E5]">
+        <div className="front-panel w-full md:w-1/4 h-auto md:h-full min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b md:border-b-0 md:border-r border-[#E0E2E5] will-change-transform">
           <div className="w-full pt-8 shrink-0">
             <span className="font-mono text-[#0E5C8C] text-sm mb-4 block tracking-widest">01 // FRONTEND</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-space text-[#1A1A1A]">Pixel-perfect<br />precision.</h2>
@@ -98,7 +96,7 @@ export default function FourFronts() {
         </div>
 
         {/* Panel 2: Backend */}
-        <div className="front-panel w-full md:w-1/4 h-auto md:h-full min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b md:border-b-0 md:border-r border-[#E0E2E5]">
+        <div className="front-panel w-full md:w-1/4 h-auto md:h-full min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b md:border-b-0 md:border-r border-[#E0E2E5] will-change-transform">
           <div className="w-full pt-8 shrink-0">
             <span className="font-mono text-[#0E5C8C] text-sm mb-4 block tracking-widest">02 // BACKEND</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-space text-[#1A1A1A]">Invisible<br />power.</h2>
@@ -122,7 +120,7 @@ export default function FourFronts() {
         </div>
 
         {/* Panel 3: UX/UI */}
-        <div className="front-panel w-full md:w-1/4 h-auto md:h-full min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b md:border-b-0 md:border-r border-[#E0E2E5]">
+        <div className="front-panel w-full md:w-1/4 h-auto md:h-full min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b md:border-b-0 md:border-r border-[#E0E2E5] will-change-transform">
           <div className="w-full pt-8 shrink-0">
             <span className="font-mono text-[#0E5C8C] text-sm mb-4 block tracking-widest">03 // UX &amp; UI</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-space text-[#1A1A1A]">Logical<br />flow.</h2>
@@ -162,7 +160,7 @@ export default function FourFronts() {
         </div>
 
         {/* Panel 4: Strategy/Growth */}
-        <div className="front-panel w-full md:w-1/4 h-auto md:h-full min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8">
+        <div className="front-panel w-full md:w-1/4 h-auto md:h-full min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 will-change-transform">
           <div className="w-full pt-8 shrink-0">
             <span className="font-mono text-[#0E5C8C] text-sm mb-4 block tracking-widest">04 // STRATEGY &amp; GROWTH</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-space text-[#1A1A1A]">Measured<br />impact.</h2>

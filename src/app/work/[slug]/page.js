@@ -8,10 +8,10 @@ const projectsData = {
     client: "E-Commerce",
     stack: ["React", "Supabase", "Tailwind", "Stripe"],
     outcome: "Increased admin workflow efficiency by 40%.",
-    image: "/projects/hanaz_main.jpg",
+    image: "/projects/hanaz_main.webp",
     images: [
-      "/projects/hanaz_modal.jpg",
-      "/projects/hanaz_main.jpg"
+      "/projects/hanaz_modal.webp",
+      "/projects/hanaz_main.webp"
     ],
     description: "Hanaz Official is a premium fashion e-commerce storefront. The new dashboard allows administrators to seamlessly manage products, track monthly sales, and monitor active orders in real-time, drastically reducing the time spent on manual entry.",
     problem: "The client was relying on disparate systems to manage their inventory, orders, and customer data, leading to a 30% error rate in order fulfillment and wasted manual hours.",
@@ -22,10 +22,10 @@ const projectsData = {
     client: "Travel Tech",
     stack: ["Next.js", "Node.js", "PostgreSQL", "Redis"],
     outcome: "Processed $2M+ in frictionless bookings.",
-    image: "/projects/roamease_main.jpg",
+    image: "/projects/roamease_main.webp",
     images: [
-      "/projects/roamease_modal.jpg",
-      "/projects/roamease_main.jpg"
+      "/projects/roamease_modal.webp",
+      "/projects/roamease_main.webp"
     ],
     description: "RoamEase simplifies the travel experience by offering frictionless bookings and highly detailed, day-by-day itineraries. Users can seamlessly track flight gates, check-in times, and hotel confirmations in one centralized, sleek interface.",
     problem: "Travelers were frustrated with juggling multiple apps for flights, hotels, and itineraries, leading to high drop-off rates during the booking process.",
@@ -36,10 +36,10 @@ const projectsData = {
     client: "EdTech",
     stack: ["Vue", "Express", "MongoDB", "WebSockets"],
     outcome: "Real-time analytics for 10k+ active students.",
-    image: "/projects/edutrack_main.jpg",
+    image: "/projects/edutrack_main.webp",
     images: [
-      "/projects/edutrack_modal.jpg",
-      "/projects/edutrack_main.jpg"
+      "/projects/edutrack_modal.webp",
+      "/projects/edutrack_main.webp"
     ],
     description: "EduTrack empowers educators with real-time analytics and predictive models for student engagement. The platform identifies at-risk students through detailed performance metrics, radar charts for skills, and real-time activity heatmaps.",
     problem: "Educators lacked visibility into real-time student performance and engagement, making it difficult to intervene before students fell significantly behind.",
@@ -100,7 +100,7 @@ export default function CaseStudyPage({ params }) {
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 mb-20">
         <div className="relative aspect-[16/9] w-full rounded-sm overflow-hidden bg-[#E8EAF0] border border-[#E0E2E5]">
-          <Image src={project.image} alt={project.title} fill className="object-cover" priority />
+          <Image src={project.image} alt={project.title} fill sizes="(max-width: 1400px) 100vw, 1400px" className="object-cover" priority />
         </div>
       </div>
 
@@ -138,7 +138,7 @@ export default function CaseStudyPage({ params }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {project.images.map((img, i) => (
             <div key={i} className="relative aspect-[4/3] rounded-sm overflow-hidden bg-[#E8EAF0] border border-[#E0E2E5]">
-              <Image src={img} alt={`${project.title} view ${i+1}`} fill className="object-cover" />
+              <Image src={img} alt={`${project.title} view ${i+1}`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
             </div>
           ))}
         </div>

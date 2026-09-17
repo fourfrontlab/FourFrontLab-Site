@@ -8,13 +8,7 @@ export default function Hero() {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.to('.reveal-word', {
-        y: '0%',
-        duration: 1.2,
-        stagger: 0.05,
-        ease: "power4.out",
-        delay: 0.2
-      });
+      // Background animation removed from GSAP to improve LCP
     }, containerRef);
 
     return () => ctx.revert();
@@ -26,20 +20,23 @@ export default function Hero() {
   return (
     <section ref={containerRef} className="min-h-screen flex flex-col justify-center px-6 md:px-12 relative overflow-hidden bg-[#F0F1F3]">
       {/* Background Accent */}
-      <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-[#2BA9D1] rounded-full blur-[200px] opacity-[0.07] pointer-events-none -translate-y-1/2" />
+      <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(43,169,209,0.07)_0%,transparent_70%)] pointer-events-none -translate-y-1/2" />
 
       <div className="max-w-[1400px] w-full mx-auto relative z-10 pt-20">
         <h1 className="text-5xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-[0.95] mb-12 font-space text-[#1A1A1A] max-w-5xl">
           {words.map((word, i) => (
             <span key={i} className="inline-block overflow-hidden align-top">
-              <span className="reveal-word inline-block translate-y-[100%]">
+              <span 
+                className="reveal-word inline-block translate-y-[100%] will-change-transform"
+                style={{ animation: `revealText 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards`, animationDelay: `${0.2 + i * 0.05}s` }}
+              >
                 {word}{i !== words.length - 1 ? '\u00A0' : ''}
               </span>
             </span>
           ))}
         </h1>
 
-        <div className="flex flex-col gap-6 opacity-0 animate-[fadeIn_1s_ease-out_1s_forwards] mb-12">
+        <div className="flex flex-col gap-6 opacity-0 animate-[fadeIn_0.8s_ease-out_0.4s_forwards] mb-12">
           {/* Capacity Badge */}
           <div className="inline-flex items-center gap-2 self-start bg-white border border-[#0E5C8C]/20 px-4 py-2 rounded-full shadow-sm relative overflow-hidden group hover:border-[#0E5C8C]/50 transition-colors">
             <div className="absolute inset-0 bg-[#0E5C8C]/5 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300"></div>
@@ -57,7 +54,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="opacity-0 animate-[fadeIn_1s_ease-out_1.3s_forwards]">
+        <div className="opacity-0 animate-[fadeIn_0.8s_ease-out_0.6s_forwards]">
           <Link href="/contact" className="inline-flex items-center gap-3 bg-[#0E5C8C] border border-[#0E5C8C] text-white px-8 py-4 rounded-sm font-medium text-lg hover:bg-[#2BA9D1] hover:border-[#2BA9D1] transition-all group">
             <span>Let&apos;s Build Something</span>
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -79,6 +76,10 @@ export default function Hero() {
       <style jsx>{`
         @keyframes fadeIn {
           to { opacity: 1; }
+        }
+        @keyframes revealText {
+          from { transform: translateY(100%); }
+          to { transform: translateY(0%); }
         }
       `}</style>
     </section>

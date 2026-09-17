@@ -68,7 +68,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="min-h-screen bg-[#F0F1F3] text-[#5A5A5A] selection:bg-[#0E5C8C] selection:text-white font-inter" suppressHydrationWarning={true}>
-        <div className="fixed inset-0 bg-noise z-[9999] pointer-events-none mix-blend-multiply opacity-20"></div>
+        <div className="fixed inset-0 bg-noise z-[9999] pointer-events-none"></div>
         <Navbar />
         <LenisProvider>
           {children}

@@ -15,7 +15,7 @@ const projects = [
     client: "E-Commerce",
     stack: ["React", "Supabase", "Tailwind", "Stripe"],
     outcome: "Increased admin workflow efficiency by 40%.",
-    image: "/projects/hanaz_main.jpg",
+    image: "/projects/hanaz_main.webp",
   },
   {
     title: "RoamEase",
@@ -23,7 +23,7 @@ const projects = [
     client: "Travel Tech",
     stack: ["Next.js", "Node.js", "PostgreSQL", "Redis"],
     outcome: "Processed $2M+ in frictionless bookings.",
-    image: "/projects/roamease_main.jpg",
+    image: "/projects/roamease_main.webp",
   },
   {
     title: "EduTrack",
@@ -31,7 +31,7 @@ const projects = [
     client: "EdTech",
     stack: ["Vue", "Express", "MongoDB", "WebSockets"],
     outcome: "Real-time analytics for 10k+ active students.",
-    image: "/projects/edutrack_main.jpg",
+    image: "/projects/edutrack_main.webp",
   }
 ];
 

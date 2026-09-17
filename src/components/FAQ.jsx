@@ -1,5 +1,5 @@
 'use client';
-import { useState, useRef } from 'react';
+import { useState, useCallback, memo } from 'react';
 import gsap from 'gsap';
 
 const faqs = [
@@ -25,12 +25,41 @@ const faqs = [
   }
 ];
 
+const FAQItem = memo(({ faq, index, isActive, onToggle }) => {
+  return (
+    <div 
+      className={`border rounded-sm overflow-hidden transition-colors duration-300 ${isActive ? 'border-[#0E5C8C] bg-white' : 'border-[#E0E2E5] bg-[#F0F1F3]'}`}
+    >
+      <button
+        className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none"
+        onClick={() => onToggle(index)}
+      >
+        <span className={`font-inter font-medium text-lg ${isActive ? 'text-[#0E5C8C]' : 'text-[#1A1A1A]'}`}>
+          {faq.question}
+        </span>
+        <span className={`text-xl transition-transform duration-300 ${isActive ? 'rotate-180 text-[#0E5C8C]' : 'text-[#5A5A5A]'}`}>
+          ↓
+        </span>
+      </button>
+      <div 
+        className={`px-6 overflow-hidden transition-all duration-500 ease-in-out ${isActive ? 'max-h-40 pb-4 opacity-100' : 'max-h-0 opacity-0'}`}
+      >
+        <p className="text-[#5A5A5A] font-light font-inter text-base">
+          {faq.answer}
+        </p>
+      </div>
+    </div>
+  );
+});
+
+FAQItem.displayName = 'FAQItem';
+
 export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const toggleAccordion = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
+  const toggleAccordion = useCallback((index) => {
+    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+  }, []);
 
   return (
     <div className="max-w-3xl mx-auto w-full">
@@ -38,34 +67,15 @@ export default function FAQ() {
         Frequently Asked Questions
       </h2>
       <div className="flex flex-col gap-4">
-        {faqs.map((faq, i) => {
-          const isActive = activeIndex === i;
-          return (
-            <div 
-              key={i} 
-              className={`border rounded-sm overflow-hidden transition-colors duration-300 ${isActive ? 'border-[#0E5C8C] bg-white' : 'border-[#E0E2E5] bg-[#F0F1F3]'}`}
-            >
-              <button
-                className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none"
-                onClick={() => toggleAccordion(i)}
-              >
-                <span className={`font-inter font-medium text-lg ${isActive ? 'text-[#0E5C8C]' : 'text-[#1A1A1A]'}`}>
-                  {faq.question}
-                </span>
-                <span className={`text-xl transition-transform duration-300 ${isActive ? 'rotate-180 text-[#0E5C8C]' : 'text-[#5A5A5A]'}`}>
-                  ↓
-                </span>
-              </button>
-              <div 
-                className={`px-6 overflow-hidden transition-all duration-500 ease-in-out ${isActive ? 'max-h-40 pb-4 opacity-100' : 'max-h-0 opacity-0'}`}
-              >
-                <p className="text-[#5A5A5A] font-light font-inter text-base">
-                  {faq.answer}
-                </p>
-              </div>
-            </div>
-          );
-        })}
+        {faqs.map((faq, i) => (
+          <FAQItem 
+            key={i}
+            index={i}
+            faq={faq}
+            isActive={activeIndex === i}
+            onToggle={toggleAccordion}
+          />
+        ))}
       </div>
     </div>
   );
