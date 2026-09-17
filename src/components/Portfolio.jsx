@@ -108,62 +108,63 @@ export default function Portfolio({ teaser = false }) {
 
         <div className="portfolio-list flex flex-col gap-16 lg:gap-24">
           {projects.map((project, i) => (
-            <Link
-              key={i}
-              href={`/work/${project.slug}`}
-              className="portfolio-card corner-ticks group relative w-full flex flex-col lg:flex-row gap-8 lg:gap-16 border border-[#151515] bg-[#FAFAF8] p-6 lg:p-10 hover:border-[#1B3A5C] hover:-translate-y-1 transition-all duration-500 shadow-sm"
-            >
-              <div className="absolute top-0 right-0 border-l border-b border-[#151515] px-4 py-1 bg-[#FAFAF8] z-10 group-hover:border-[#1B3A5C] transition-colors">
-                <span className="font-mono text-xs text-[#151515] tracking-widest">PROJECT &mdash; 0{i + 1}</span>
-              </div>
+            <div key={i} className="portfolio-card w-full" style={{ contentVisibility: 'auto' }}>
+              <Link
+                href={`/work/${project.slug}`}
+                className="corner-ticks group relative w-full flex flex-col lg:flex-row gap-8 lg:gap-16 border border-[#151515] bg-[#FAFAF8] p-6 lg:p-10 hover:border-[#1B3A5C] hover:-translate-y-1 transition-transform transition-colors duration-500 shadow-sm"
+              >
+                <div className="absolute top-0 right-0 border-l border-b border-[#151515] px-4 py-1 bg-[#FAFAF8] z-10 group-hover:border-[#1B3A5C] transition-colors">
+                  <span className="font-mono text-xs text-[#151515] tracking-widest">PROJECT &mdash; 0{i + 1}</span>
+                </div>
 
-              {/* Image / Mockup Area */}
-              <div className="w-full lg:w-1/2 overflow-hidden relative aspect-[4/3] bg-[#E5E5E0] border border-[#151515] group-hover:border-[#1B3A5C] transition-colors">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  placeholder="blur"
-                />
-                <div className="absolute inset-0 bg-white/20 group-hover:bg-transparent transition-colors duration-500" />
-                {/* Blue overlay on hover */}
-                <div className="absolute inset-0 bg-[#1B3A5C]/10 opacity-0 group-hover:opacity-100 mix-blend-multiply transition-opacity duration-500 pointer-events-none" />
-                <div className="absolute top-2 left-2 w-2 h-2 border border-[#151515] group-hover:border-[#1B3A5C] bg-[#FAFAF8] z-10"></div>
-                <div className="absolute top-2 right-2 w-2 h-2 border border-[#151515] group-hover:border-[#1B3A5C] bg-[#FAFAF8] z-10"></div>
-                <div className="absolute bottom-2 left-2 w-2 h-2 border border-[#151515] group-hover:border-[#1B3A5C] bg-[#FAFAF8] z-10"></div>
-                <div className="absolute bottom-2 right-2 w-2 h-2 border border-[#151515] group-hover:border-[#1B3A5C] bg-[#FAFAF8] z-10"></div>
-              </div>
+                {/* Image / Mockup Area */}
+                <div className="w-full lg:w-1/2 overflow-hidden relative aspect-[4/3] bg-[#E5E5E0] border border-[#151515] group-hover:border-[#1B3A5C] transition-colors">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    placeholder="blur"
+                  />
+                  <div className="absolute inset-0 bg-white/20 group-hover:bg-transparent transition-colors duration-500" />
+                  {/* Blue overlay on hover */}
+                  <div className="absolute inset-0 bg-[#1B3A5C]/10 opacity-0 group-hover:opacity-100 mix-blend-multiply transition-opacity duration-500 pointer-events-none" />
+                  <div className="absolute top-2 left-2 w-2 h-2 border border-[#151515] group-hover:border-[#1B3A5C] bg-[#FAFAF8] z-10"></div>
+                  <div className="absolute top-2 right-2 w-2 h-2 border border-[#151515] group-hover:border-[#1B3A5C] bg-[#FAFAF8] z-10"></div>
+                  <div className="absolute bottom-2 left-2 w-2 h-2 border border-[#151515] group-hover:border-[#1B3A5C] bg-[#FAFAF8] z-10"></div>
+                  <div className="absolute bottom-2 right-2 w-2 h-2 border border-[#151515] group-hover:border-[#1B3A5C] bg-[#FAFAF8] z-10"></div>
+                </div>
 
-              {/* Content Area */}
-              <div className="w-full lg:w-1/2 flex flex-col justify-center pt-4 lg:pt-0">
-                <div className="flex justify-between items-start mb-6">
-                  <span className="font-mono text-[#1B3A5C] text-xs uppercase tracking-widest border-b border-[#1B3A5C] pb-1">
-                    {project.client}
-                  </span>
-                  <div className="w-10 h-10 border border-[#151515] text-[#151515] flex items-center justify-center group-hover:bg-[#1B3A5C] group-hover:text-white group-hover:border-[#1B3A5C] transition-colors duration-300">
-                    <ArrowUpRight className="w-5 h-5" />
+                {/* Content Area */}
+                <div className="w-full lg:w-1/2 flex flex-col justify-center pt-4 lg:pt-0">
+                  <div className="flex justify-between items-start mb-6">
+                    <span className="font-mono text-[#1B3A5C] text-xs uppercase tracking-widest border-b border-[#1B3A5C] pb-1">
+                      {project.client}
+                    </span>
+                    <div className="w-10 h-10 border border-[#151515] text-[#151515] flex items-center justify-center group-hover:bg-[#1B3A5C] group-hover:text-white group-hover:border-[#1B3A5C] transition-colors duration-300">
+                      <ArrowUpRight className="w-5 h-5" />
+                    </div>
+                  </div>
+
+                  <h3 className="text-4xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-inter text-[#151515] group-hover:text-[#1B3A5C] transition-colors">{project.title}</h3>
+
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {project.stack.map((tech, j) => (
+                      <span key={j} className="text-xs font-mono text-[#151515] border border-[#151515] px-3 py-1.5 bg-[#FAFAF8]">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="mt-auto pt-6 border-t border-[#151515] group-hover:border-[#1B3A5C] transition-colors relative">
+                    <div className="absolute top-[-4px] left-0 w-[1px] h-[7px] bg-[#151515] group-hover:bg-[#1B3A5C] transition-colors"></div>
+                    <span className="block text-[#5C5C5C] font-mono text-xs uppercase mb-2 tracking-widest">Outcome</span>
+                    <span className="font-inter text-[#151515] text-lg lg:text-xl font-medium leading-relaxed">{project.outcome}</span>
                   </div>
                 </div>
-
-                <h3 className="text-4xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-inter text-[#151515] group-hover:text-[#1B3A5C] transition-colors">{project.title}</h3>
-
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {project.stack.map((tech, j) => (
-                    <span key={j} className="text-xs font-mono text-[#151515] border border-[#151515] px-3 py-1.5 bg-[#FAFAF8]">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="mt-auto pt-6 border-t border-[#151515] group-hover:border-[#1B3A5C] transition-colors relative">
-                  <div className="absolute top-[-4px] left-0 w-[1px] h-[7px] bg-[#151515] group-hover:bg-[#1B3A5C] transition-colors"></div>
-                  <span className="block text-[#5C5C5C] font-mono text-xs uppercase mb-2 tracking-widest">Outcome</span>
-                  <span className="font-inter text-[#151515] text-lg lg:text-xl font-medium leading-relaxed">{project.outcome}</span>
-                </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           ))}
         </div>
       </div>
