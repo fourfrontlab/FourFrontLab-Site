@@ -50,13 +50,13 @@ export default function FourFronts() {
       <div ref={scrollContainerRef} className="flex flex-col w-full relative z-10">
 
         {/* Panel 1: Frontend */}
-        <div className="front-panel w-full h-auto min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b border-[#151515]">
+        <div className="front-panel w-full h-auto flex flex-col justify-between py-12 md:py-20 px-8 md:px-12 relative gap-12 border-b border-[#151515]">
           <div className="w-full pt-8 shrink-0">
             <span className="font-mono text-[#1B3A5C] text-sm mb-4 block tracking-widest uppercase border-b border-[#1B3A5C] pb-1 w-max">FIG. 01 // FRONTEND</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-inter text-[#151515]">Pixel-perfect<br />precision.</h2>
             <p className="text-[#5C5C5C] text-lg lg:text-xl max-w-md font-medium">We build fluid, component-driven interfaces that feel alive, using modern frameworks and precise animations.</p>
           </div>
-          <div className="w-[90%] md:w-full md:max-w-[640px] h-auto aspect-[420/380] md:aspect-auto md:flex-1 md:min-h-[300px] md:max-h-[580px] mx-auto border border-[#151515] bg-[#FAFAF8] p-[24px] flex items-center justify-center relative overflow-hidden group corner-ticks">
+          <div className="w-[90%] md:w-full max-w-[450px] aspect-[420/380] mx-auto border border-[#151515] bg-[#FAFAF8] p-[24px] flex items-center justify-center relative overflow-hidden group corner-ticks">
             
             <svg viewBox="0 0 300 200" className="w-full h-full" fill="none">
               <path d="M10 10 H290 V190 H10 Z" stroke="#E5E5E0" strokeWidth="1" strokeDasharray="2 2" />
@@ -87,13 +87,13 @@ export default function FourFronts() {
         </div>
 
         {/* Panel 2: Backend */}
-        <div className="front-panel w-full h-auto min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b border-[#151515]">
+        <div className="front-panel w-full h-auto flex flex-col justify-between py-12 md:py-20 px-8 md:px-12 relative gap-12 border-b border-[#151515]">
           <div className="w-full pt-8 shrink-0">
             <span className="font-mono text-[#1B3A5C] text-sm mb-4 block tracking-widest uppercase border-b border-[#1B3A5C] pb-1 w-max">FIG. 02 // BACKEND</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-inter text-[#151515]">Invisible<br />power.</h2>
             <p className="text-[#5C5C5C] text-lg lg:text-xl max-w-md font-medium">Scalable architecture, secure APIs, and optimized databases that handle heavy logic without breaking a sweat.</p>
           </div>
-          <div className="w-[90%] md:w-full md:max-w-[640px] h-auto aspect-[420/380] md:aspect-auto md:flex-1 md:min-h-[300px] md:max-h-[580px] mx-auto border border-[#151515] bg-[#FAFAF8] p-[24px] flex items-center justify-center relative overflow-hidden group corner-ticks">
+          <div className="w-[90%] md:w-full max-w-[450px] aspect-[420/380] mx-auto border border-[#151515] bg-[#FAFAF8] p-[24px] flex items-center justify-center relative overflow-hidden group corner-ticks">
             
             <svg viewBox="0 0 300 200" className="w-full h-full" fill="none">
               <path d="M10 10 H290 V190 H10 Z" stroke="#E5E5E0" strokeWidth="1" strokeDasharray="2 2" />
@@ -136,13 +136,13 @@ export default function FourFronts() {
         </div>
 
         {/* Panel 3: UX/UI */}
-        <div className="front-panel w-full h-auto min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8 border-b border-[#151515]">
+        <div className="front-panel w-full h-auto flex flex-col justify-between py-12 md:py-20 px-8 md:px-12 relative gap-12 border-b border-[#151515]">
           <div className="w-full pt-8 shrink-0">
             <span className="font-mono text-[#1B3A5C] text-sm mb-4 block tracking-widest uppercase border-b border-[#1B3A5C] pb-1 w-max">FIG. 03 // UX &amp; UI</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-inter text-[#151515]">Logical<br />flow.</h2>
             <p className="text-[#5C5C5C] text-lg lg:text-xl max-w-md font-medium">Design systems that make sense. We prototype interactions that guide users frictionlessly from A to B.</p>
           </div>
-          <div className="w-[90%] md:w-full md:max-w-[640px] h-auto aspect-[420/380] md:aspect-auto md:flex-1 md:min-h-[300px] md:max-h-[580px] mx-auto border border-[#151515] bg-[#FAFAF8] p-[24px] flex items-center justify-center relative overflow-hidden group corner-ticks">
+          <div className="w-[90%] md:w-full max-w-[450px] aspect-[420/380] mx-auto border border-[#151515] bg-[#FAFAF8] p-[24px] flex items-center justify-center relative overflow-hidden group corner-ticks">
             
             <svg viewBox="0 0 300 200" className="w-full h-full" fill="none">
               <path d="M10 10 H290 V190 H10 Z" stroke="#E5E5E0" strokeWidth="1" strokeDasharray="2 2" />
@@ -189,13 +189,13 @@ export default function FourFronts() {
         </div>
 
         {/* Panel 4: Strategy/Growth */}
-        <div className="front-panel w-full h-auto min-h-[70vh] flex flex-col justify-between py-12 md:py-16 px-8 md:px-12 relative gap-8">
+        <div className="front-panel w-full h-auto flex flex-col justify-between py-12 md:py-20 px-8 md:px-12 relative gap-12">
           <div className="w-full pt-8 shrink-0">
             <span className="font-mono text-[#1B3A5C] text-sm mb-4 block tracking-widest uppercase border-b border-[#1B3A5C] pb-1 w-max">FIG. 04 // STRATEGY &amp; GROWTH</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-6 font-inter text-[#151515]">Measured<br />impact.</h2>
             <p className="text-[#5C5C5C] text-lg lg:text-xl max-w-md font-medium">We don&apos;t just ship code. We align technical execution with business objectives to ensure your product actually scales.</p>
           </div>
-          <div className="w-[90%] md:w-full md:max-w-[640px] h-auto aspect-[420/380] md:aspect-auto md:flex-1 md:min-h-[300px] md:max-h-[580px] mx-auto border border-[#151515] bg-[#FAFAF8] p-[24px] flex items-center justify-center relative overflow-hidden group corner-ticks">
+          <div className="w-[90%] md:w-full max-w-[450px] aspect-[420/380] mx-auto border border-[#151515] bg-[#FAFAF8] p-[24px] flex items-center justify-center relative overflow-hidden group corner-ticks">
             
             <svg viewBox="0 0 300 200" className="w-full h-full" fill="none">
               <path d="M10 10 H290 V190 H10 Z" stroke="#E5E5E0" strokeWidth="1" strokeDasharray="2 2" />
