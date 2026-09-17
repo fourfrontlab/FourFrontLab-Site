@@ -7,18 +7,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Stats() {
   const sectionRef = useRef(null);
-  const countersRef = useRef([]);
-
-  // Store the ref items properly
-  const setRef = (el) => {
-    if (el && !countersRef.current.includes(el)) {
-      countersRef.current.push(el);
-    }
-  };
-
   useEffect(() => {
     let ctx = gsap.context(() => {
-      countersRef.current.forEach((counter) => {
+      const counters = gsap.utils.toArray('.stat-counter');
+      counters.forEach((counter) => {
         if (!counter) return;
         const target = parseFloat(counter.getAttribute('data-target'));
         if (isNaN(target)) return;
@@ -56,11 +48,11 @@ export default function Stats() {
           </p>
         </div>
 
-        <div className="md:w-2/3 flex flex-col sm:flex-row gap-8 sm:gap-4 justify-around w-full">
+        <div className="md:w-2/3 grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 w-full">
           <div className="flex flex-col border-l border-[#1B3A5C] pl-6 relative">
             <div className="absolute top-0 -left-1 w-2 h-px bg-[#1B3A5C]"></div>
-            <div className="flex items-baseline text-[#151515] font-mono font-bold text-5xl md:text-7xl">
-              <span ref={setRef} data-target="40" className="will-change-transform">0</span>
+            <div className="flex items-baseline text-[#151515] font-mono font-bold text-5xl md:text-6xl lg:text-7xl">
+              <span data-target="40" className="stat-counter will-change-transform">40</span>
               <span className="text-[#1B3A5C]">+</span>
             </div>
             <span className="text-[#5C5C5C] font-mono tracking-widest text-xs mt-2 uppercase">Projects Delivered</span>
@@ -68,8 +60,8 @@ export default function Stats() {
 
           <div className="flex flex-col border-l border-[#1B3A5C] pl-6 relative">
             <div className="absolute top-0 -left-1 w-2 h-px bg-[#1B3A5C]"></div>
-            <div className="flex items-baseline text-[#151515] font-mono font-bold text-5xl md:text-7xl">
-              <span ref={setRef} data-target="10" className="will-change-transform">0</span>
+            <div className="flex items-baseline text-[#151515] font-mono font-bold text-5xl md:text-6xl lg:text-7xl">
+              <span data-target="10" className="stat-counter will-change-transform">10</span>
               <span className="text-[#1B3A5C]">+</span>
             </div>
             <span className="text-[#5C5C5C] font-mono tracking-widest text-xs mt-2 uppercase">Years Combined Exp</span>
@@ -77,9 +69,18 @@ export default function Stats() {
 
           <div className="flex flex-col border-l border-[#1B3A5C] pl-6 relative">
             <div className="absolute top-0 -left-1 w-2 h-px bg-[#1B3A5C]"></div>
-            <div className="flex items-baseline text-[#151515] font-mono font-bold text-5xl md:text-7xl">
+            <div className="flex items-baseline text-[#151515] font-mono font-bold text-5xl md:text-6xl lg:text-7xl">
+              <span data-target="99" className="stat-counter will-change-transform">99</span>
+              <span className="text-[#1B3A5C]">%</span>
+            </div>
+            <span className="text-[#5C5C5C] font-mono tracking-widest text-xs mt-2 uppercase">Client Retention</span>
+          </div>
+
+          <div className="flex flex-col border-l border-[#1B3A5C] pl-6 relative">
+            <div className="absolute top-0 -left-1 w-2 h-px bg-[#1B3A5C]"></div>
+            <div className="flex items-baseline text-[#151515] font-mono font-bold text-5xl md:text-6xl lg:text-7xl">
               <span className="text-[#1B3A5C] mr-1">&lt;</span>
-              <span ref={setRef} data-target="2" className="will-change-transform">0</span>
+              <span data-target="2" className="stat-counter will-change-transform">2</span>
               <span className="text-3xl md:text-4xl ml-1 text-[#151515]">h</span>
             </div>
             <span className="text-[#5C5C5C] font-mono tracking-widest text-xs mt-2 uppercase">Avg Response Time</span>

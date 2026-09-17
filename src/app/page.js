@@ -5,6 +5,7 @@ import Hero from '@/components/Hero';
 const FourFronts = dynamic(() => import('@/components/FourFronts'), { ssr: true });
 const Stats = dynamic(() => import('@/components/Stats'), { ssr: true });
 const Portfolio = dynamic(() => import('@/components/Portfolio'), { ssr: true });
+const TechStack = dynamic(() => import('@/components/TechStack'), { ssr: true });
 const Process = dynamic(() => import('@/components/Process'), { ssr: true });
 const Testimonials = dynamic(() => import('@/components/Testimonials'), { ssr: true });
 const FAQ = dynamic(() => import('@/components/FAQ'), { ssr: true });
@@ -17,6 +18,7 @@ export default function Home() {
       <FourFronts />
       <Stats />
       <Portfolio teaser={true} />
+      <TechStack />
       <Process teaser={true} />
       <Testimonials />
       <div className="section-padding px-6 md:px-12 bg-[#F0F1F3]">

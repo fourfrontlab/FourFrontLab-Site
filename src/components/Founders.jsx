@@ -71,6 +71,9 @@ export default function Founders() {
             </div>
             <h3 className="text-2xl font-bold font-inter text-[#151515] mb-2 group-hover:text-[#1B3A5C] transition-colors dimension-line pb-2 inline-block">M. Taha Nadeem</h3>
             <span className="font-mono text-[#151515] text-xs uppercase tracking-widest block mb-4 mt-2">Frontend / Engineering</span>
+            <p className="text-sm text-[#5C5C5C] mb-6 leading-relaxed">
+              Architecting responsive, highly interactive frontend experiences that fuse robust engineering with premium aesthetics.
+            </p>
             <div className="flex gap-4">
               <a href="https://github.com/MTahaNadeem" target="_blank" rel="noopener noreferrer" className="text-[#151515] hover:text-[#1B3A5C] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center -ml-3">
                 <FaGithub className="w-5 h-5" />
@@ -88,6 +91,9 @@ export default function Founders() {
             </div>
             <h3 className="text-2xl font-bold font-inter text-[#151515] mb-2 group-hover:text-[#1B3A5C] transition-colors dimension-line pb-2 inline-block">Abdul Haseeb</h3>
             <span className="font-mono text-[#151515] text-xs uppercase tracking-widest block mb-4 mt-2">Backend / Architecture</span>
+            <p className="text-sm text-[#5C5C5C] mb-6 leading-relaxed">
+              Designing resilient backend architectures and optimized data pipelines that scale reliably under pressure.
+            </p>
             <div className="flex gap-4">
               <a href="https://github.com/haseeb786-code" target="_blank" rel="noopener noreferrer" className="text-[#151515] hover:text-[#1B3A5C] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center -ml-3">
                 <FaGithub className="w-5 h-5" />
@@ -105,6 +111,9 @@ export default function Founders() {
             </div>
             <h3 className="text-2xl font-bold font-inter text-[#151515] mb-2 group-hover:text-[#1B3A5C] transition-colors dimension-line pb-2 inline-block">Syed Haseeb Badshah</h3>
             <span className="font-mono text-[#151515] text-xs uppercase tracking-widest block mb-4 mt-2">UX/UI / Design System</span>
+            <p className="text-sm text-[#5C5C5C] mb-6 leading-relaxed">
+              Crafting intuitive user interfaces and cohesive design systems that elevate brand identity and user engagement.
+            </p>
             <div className="flex gap-4">
               <a href="https://github.com/syed-haseeb-badshah" target="_blank" rel="noopener noreferrer" className="text-[#151515] hover:text-[#1B3A5C] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center -ml-3">
                 <FaGithub className="w-5 h-5" />
@@ -122,6 +131,9 @@ export default function Founders() {
             </div>
             <h3 className="text-2xl font-bold font-inter text-[#151515] mb-2 group-hover:text-[#1B3A5C] transition-colors dimension-line pb-2 inline-block">Mustafa Arfat</h3>
             <span className="font-mono text-[#151515] text-xs uppercase tracking-widest block mb-4 mt-2">Strategy / Growth</span>
+            <p className="text-sm text-[#5C5C5C] mb-6 leading-relaxed">
+              Driving business growth through data-driven strategy and targeted product positioning for long-term impact.
+            </p>
             <div className="flex gap-4">
               <a href="https://github.com/cust40078-sudo" target="_blank" rel="noopener noreferrer" className="text-[#151515] hover:text-[#1B3A5C] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center -ml-3">
                 <FaGithub className="w-5 h-5" />

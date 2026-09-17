@@ -8,6 +8,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+import hanazImg from '../../public/projects/hanaz_main.webp';
+import roameaseImg from '../../public/projects/roamease_main.webp';
+import edutrackImg from '../../public/projects/edutrack_main.webp';
+import nexusImg from '../../public/projects/nexus_main.jpg';
+
 const projects = [
   {
     title: "Hanaz Official",
@@ -15,7 +20,7 @@ const projects = [
     client: "E-Commerce",
     stack: ["React", "Supabase", "Tailwind", "Stripe"],
     outcome: "Increased admin workflow efficiency by 40%.",
-    image: "/projects/hanaz_main.webp",
+    image: hanazImg,
   },
   {
     title: "RoamEase",
@@ -23,7 +28,7 @@ const projects = [
     client: "Travel Tech",
     stack: ["Next.js", "Node.js", "PostgreSQL", "Redis"],
     outcome: "Processed $2M+ in frictionless bookings.",
-    image: "/projects/roamease_main.webp",
+    image: roameaseImg,
   },
   {
     title: "EduTrack",
@@ -31,7 +36,15 @@ const projects = [
     client: "EdTech",
     stack: ["Vue", "Express", "MongoDB", "WebSockets"],
     outcome: "Real-time analytics for 10k+ active students.",
-    image: "/projects/edutrack_main.webp",
+    image: edutrackImg,
+  },
+  {
+    title: "Nexus AI",
+    slug: "nexus-ai",
+    client: "FinTech",
+    stack: ["React", "Python", "FastAPI", "PostgreSQL"],
+    outcome: "Automated risk assessment for 50k+ transactions.",
+    image: nexusImg,
   }
 ];
 
@@ -114,6 +127,8 @@ export default function Portfolio({ teaser = false }) {
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  placeholder="blur"
+                  priority={i < 2}
                 />
                 <div className="absolute inset-0 bg-white/20 group-hover:bg-transparent transition-colors duration-500" />
                 {/* Blue overlay on hover */}
