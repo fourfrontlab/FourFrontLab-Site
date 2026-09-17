@@ -35,7 +35,7 @@ export default function Hero() {
 
           <div className="opacity-0 animate-[fadeIn_0.8s_ease-out_0.6s_forwards]">
             <Link href="/contact" className="inline-flex items-center gap-3 bg-[#FAFAF8] border border-[#151515] text-[#151515] px-8 py-4 font-mono font-bold text-sm tracking-widest uppercase hover:bg-[#151515] hover:text-white transition-all group corner-ticks">
-              <span>Initialize Project</span>
+              <span>Start a Project</span>
               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

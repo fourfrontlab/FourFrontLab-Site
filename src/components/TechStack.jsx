@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 
 const technologies = [
-  "React", "Next.js", "Node.js", "PostgreSQL", "Supabase", "Tailwind CSS", "AWS", "GSAP", "TypeScript", "Redis"
+  "React", "Next.js", "Node.js", "PostgreSQL", "Supabase", "Tailwind CSS", "AWS", "TypeScript", "Redis"
 ];
 
 export default function TechStack() {
